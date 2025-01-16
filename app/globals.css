@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+:root {
+  --primary-gradient: linear-gradient(to right, rgba(42, 163, 153, 1), rgba(51, 184, 134, 1), rgba(37, 99, 235, 1));
+  --hover-color: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+header {
+  animation: gradientAnimation 10s ease infinite;
+}
+.nav-item:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+.my-hover-sidebar {
+  @apply hover:bg-white/80 hover:backdrop-blur-lg hover:rounded-lg ps-3;
+}
+.my-hover-sidebar-text {
+  @apply hover:bg-white/80 hover:backdrop-blur-lg hover:rounded-lg ps-3;
+}
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: black;
+}
+body {
+  padding-top: 190px; /* به اندازه ارتفاع هدر تنظیم کنید */
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+
+
+/* در فایل globals.css یا هر فایل CSS دیگر */
+body.auth-page header, body.auth-page footer {
+  display: none;
+}
+
+body {
+  font-family: 'Vazir', sans-serif;
+}
+/* انیمیشن برای برق سفید */
+@keyframes lightning {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* اعمال انیمیشن بر روی خط برق */
+.animate-lightning {
+  background: linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.6) 50%);
+  animation: lightning 1.5s linear infinite;
+}
