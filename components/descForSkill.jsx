@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Carousel, Container, Card } from 'react-bootstrap'; // وارد کردن کامپوننت‌های لازم از react-bootstrap
 const skills = [
   { 
     name: "HTML", 
@@ -50,44 +50,29 @@ const skills = [
 
 const DescForSkill = () => {
   return (
-    <div className="container py-5">
-      <h3 className="bg-gray-800 text-4xl font-extrabold text-center mb-12 text-white shadow-lg py-3 px-8 rounded-lg hover:scale-105 transition-all duration-500 ease-in-out">
+    <Container className="py-5">
+      <h3 className="bg-dark text-white text-center py-3 px-8 rounded-lg mb-4">
         توضیح مهارت‌ها
       </h3>
 
-      {/* Bootstrap Carousel */}
-      <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          {/* Map through skills array to create carousel items dynamically */}
-          {skills.map((skill, index) => (
-            <div className={`carousel-item ${index === 0 ? 'active' : ''} animate__animated animate__fadeIn`} key={index}>
-              <div className="d-block w-full bg-black/50 text-white p-5 rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-500 ease-in-out group flex justify-center items-center h-auto sm:h-auto">
-                <div className="flex flex-col justify-center items-center">
-                  <h5 className="text-center text-3xl text-white group-hover:text-yellow-400 group-hover:scale-110 transition-all duration-500 ease-in-out mb-6 sm:mb-6 px-6 py-3 rounded-lg">
-                    <i className={`${skill.icon} text-4xl me-3 group-hover:scale-125 transition-all duration-500 ease-in-out`}></i> 
-                    {skill.name}
-                  </h5>
-                  {/* Remove max-height and allow text to flow naturally */}
-                  <p className="bg-white/80 backdrop-blur-lg text-black p-3 rounded-lg transition-all duration-500 ease-in-out group-hover:text-gray-300 mb-6 w-full sm:w-full">
-                    {skill.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Carousel controls */}
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">قبلی</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">بعدی</span>
-        </button>
-      </div>
-    </div>
+      <Carousel>
+        {skills.map((skill, index) => (
+          <Carousel.Item key={index} className={`animate__animated animate__fadeIn`}>
+            <Card className="text-center p-3 bg-dark text-white rounded-lg">
+              <Card.Body>
+                <Card.Title className="d-flex justify-content-center align-items-center">
+                  <i className={`${skill.icon} text-4xl me-3`}></i>
+                  {skill.name}
+                </Card.Title>
+                <Card.Text className="bg-white text-dark p-3 rounded-lg">
+                  {skill.description}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </Container>
   );
 };
 

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation' // تغییر در نسخه‌های جدید
 
 export default function Login() {
@@ -8,13 +8,27 @@ export default function Login() {
   const [error, setError] = useState('')
   const router = useRouter()
 
+  // استفاده از useEffect برای اطمینان از دسترسی به localStorage فقط در کلاینت
+  useEffect(() => {
+    // شما می‌توانید اینجا از localStorage یا سایر ویژگی‌های مرورگر استفاده کنید
+    if (typeof window !== 'undefined') {
+      // برای مثال، می‌توانید بررسی کنید که آیا کاربر قبلاً وارد سیستم شده است
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn) {
+        router.push('/users'); // هدایت به صفحه کاربران اگر لاگین شده باشد
+      }
+    }
+  }, [router]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     // بررسی اعتبار نام کاربری و رمز عبور
     if (username === 'hajy' && password === 'A6387640h') {
       // ذخیره وضعیت لاگین در localStorage
-      localStorage.setItem('isLoggedIn', 'true');
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('isLoggedIn', 'true');
+      }
       // هدایت به صفحه یوزرها
       router.push('/users');
     } else {

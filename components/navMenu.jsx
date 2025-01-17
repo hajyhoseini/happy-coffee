@@ -2,8 +2,8 @@ import React from 'react';
 
 const NavMenu = () => {
   return (
-    <nav className="w-full mt-4 flex justify-center sticky top-16 z-20">
-      <ul className="inline-flex space-x-6 bg-white/80 p-4 rounded-md shadow-lg items-center">
+    <nav className="w-full mt-2 flex justify-center md:justify-end md:ms-2 lg:justify-center sticky top-8 ">
+      <ul className="inline-flex space-x-6 bg-white/80 p-2 rounded-md shadow-lg items-center">
         <li className="flex items-center space-x-2">
           <a
             href="#home"

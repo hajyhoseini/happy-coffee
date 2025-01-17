@@ -28,7 +28,7 @@ const Header = () => {
       {/* محتوای مرکزی (بین خوشامدگویی و منو) */}
       <div className="container mx-auto flex justify-center items-center px-4 sm:px-6 text-black mt-4">
         {/* بخش تصویر و متن */}
-        <div className="flex items-center text-center lg:text-left">
+        <div className="flex items-end text-center lg:text-left">
           <img 
             src="/image/userMy.webp" 
             alt="Profile"
