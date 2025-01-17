@@ -38,6 +38,7 @@ export default function Login() {
   
 
   return (
+    
     <div className="mb-3 bg-custom-image bg-cover bg-center h-64 w-full flex items-center justify-center min-h-screen flex-col">
       <div className="bg-white/60 backdrop-blur-lg rounded-lg p-5 shadow-lg w-96 lg:w-2/4 lg:h-3/5 mb-36 lg:mb-10">
         <h2 className="text-2xl font-semibold text-center mb-6">ورود به سایت شخصی من</h2>

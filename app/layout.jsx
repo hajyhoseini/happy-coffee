@@ -28,11 +28,60 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Head>
-        <title>اولین سایت اختصاصی من❤️</title>
-        <meta name="description" content="ساخته شده توسط A.h.h.81" />
-        <link rel="stylesheet" href="/fonts/fontawesome/css/all.min.css" />
-      </Head>
+
+
+   <Head>
+   {isAuthPage && (
+          <meta name="robots" content="noindex, nofollow" />
+        )}
+  <title>رزومه آنلاین ابوالفضل حاجی حسینی | توسعه‌دهنده وب</title>
+  <meta name="description" content="رزومه آنلاین ابوالفضل حاجی حسینی شامل مهارت‌ها، تجربیات کاری، پروژه‌ها و مقالات توسعه‌دهنده وب." />
+  <meta name="keywords" content="پروفایل توسعه‌دهنده وب , ابوالفضل حاجی حسینی, توسعه‌دهنده وب, برنامه‌نویس, React, Next.js" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="رزومه آنلاین ابوالفضل حاجی حسینی | توسعه‌دهنده وب" />
+  <meta property="og:description" content="رزومه آنلاین ابوالفضل حاجی حسینی شامل مهارت‌ها، تجربیات کاری، پروژه‌ها و مقالات توسعه‌دهنده وب." />
+  <meta property="og:image" content="https://centerproject.vercel.app/images/og-image.jpg" />
+  <meta property="og:url" content="https://centerproject.vercel.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="رزومه آنلاین ابوالفضل حاجی حسینی" />
+  <meta name="twitter:description" content="رزومه آنلاین و مهارت‌های برنامه‌نویسی وب من." />
+  <meta name="twitter:image" content="https://centerproject.vercel.app/images/twitter-image.jpg" />
+  
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "http://schema.org",
+        "@type": "JobPosting",
+        title: "توسعه‌دهنده وب",
+        description: "توسعه و نگهداری اپلیکیشن‌های وب با استفاده از React، Node.js و Next.js.",
+        hiringOrganization: {
+          "@type": "Organization",
+          name: "شرکت XYZ",
+          sameAs: "https://companyxyz.com"
+        },
+        jobLocation: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "خیابان فلان، تهران، ایران",
+            addressLocality: "تهران",
+            addressCountry: "IR"
+          }
+        },
+        datePosted: "2024-01-01",
+        validThrough: "2024-12-31",
+        employmentType: "تمام‌وقت",
+        skills: ["React", "Node.js", "Next.js", "JavaScript"],
+      }),
+    }}
+  />
+
+
+</Head>
+
+
+
       <html lang="en" dir="rtl">
         <body>
           {/* نمایش هدر فقط در صورتی که صفحه لاگین یا ثبت‌نام نباشد */}
