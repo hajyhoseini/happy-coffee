@@ -1,60 +1,71 @@
-import React from 'react';
-import { Carousel, Container, Card, Button } from 'react-bootstrap'; // وارد کردن کامپوننت‌های لازم از react-bootstrap
+import React from "react";
+import { Carousel, Container, Card, Button } from "react-bootstrap";
+import {
+  FaHotjar,
+  FaCoffee,
+  FaMugHot,
+  FaGlassWhiskey,
+  FaLeaf,
+  FaCocktail,
+  FaBeer,
+} from "react-icons/fa"; // وارد کردن آیکون‌های مورد نظر از react-icons
 
 const skills = [
-  { 
-    name: "HTML", 
-    icon: "animate-flash fab fa-html5 text-orange-500", 
-    description: "HTML (زبان نشانه‌گذاری ابرمتن) ساختار اصلی صفحات وب را فراهم می‌کند. با استفاده از HTML، می‌توان متن، تصاویر، لینک‌ها، فرم‌ها و بسیاری از اجزای دیگر را به صفحه اضافه کرد. این زبان به عنوان پایه و اساس هر وب‌سایتی شناخته می‌شود. HTML با استفاده از تگ‌ها و عناصر مختلف به مرورگرها دستور می‌دهد چگونه محتوای صفحه را نمایش دهند.",
-    link: "https://fa.wikipedia.org/wiki/HTML"
+  {
+    name: "هات چاکلت",
+    icon: <FaHotjar className="text-yellow-800" />,
+    description:
+      "هات چاکلت یک نوشیدنی داغ و دلپذیر است که از ترکیب پودر شکلات، شیر و گاهی خامه تهیه می‌شود. این نوشیدنی، گرمای دلنشینی را به فرد می‌دهد و معمولاً در روزهای سرد محبوب است. هات چاکلت با طعم شیرین و غنی خود شناخته می‌شود.",
+    link: "https://fa.wikipedia.org/wiki/Hot_chocolate",
   },
-  { 
-    name: "CSS", 
-    icon: "animate-flash fab fa-css3-alt text-blue-500", 
-    description: "CSS (شیوه‌نامهٔ سطحی) برای طراحی و استایل‌دهی به صفحات وب استفاده می‌شود. این زبان به شما امکان می‌دهد تا ظاهر HTML را از جمله رنگ‌ها، فونت‌ها، چیدمان و انیمیشن‌ها تنظیم کنید. CSS به تفکیک طراحی از محتوا کمک می‌کند و باعث می‌شود صفحات وب جذاب‌تر و قابل دسترسی‌تر باشند. با CSS می‌توان صفحات وب را برای انواع دستگاه‌ها بهینه‌سازی کرد.",
-    link: "https://fa.wikipedia.org/wiki/CSS"
+  {
+    name: "نسکافه",
+    icon: <FaCoffee className="text-yellow-600" />,
+    description:
+      "نسکافه یک نوع قهوه فوری است که به سرعت در آب یا شیر حل می‌شود و به افراد این امکان را می‌دهد که بدون نیاز به دستگاه‌های پیچیده، قهوه‌ای با طعم غنی تهیه کنند. این نوشیدنی معمولاً به دلیل سرعت و راحتی در تهیه بسیار محبوب است.",
+    link: "https://fa.wikipedia.org/wiki/Nescafé",
   },
-  { 
-    name: "JavaScript", 
-    icon: "animate-flash fab fa-js text-yellow-300", 
-    description: "JavaScript یک زبان برنامه‌نویسی قدرتمند است که در سمت کاربر (Client-side) برای ایجاد تعاملات دینامیک در صفحات وب استفاده می‌شود. این زبان برای ساخت برنامه‌های وب پویا و به‌روز در زمان واقعی بسیار مفید است. JavaScript به شما امکان می‌دهد تا محتوا را تغییر دهید، فرم‌ها را اعتبارسنجی کنید و انیمیشن‌ها و جلوه‌های ویژه ایجاد کنید. این زبان در کنار HTML و CSS برای ساخت وب‌سایت‌های تعاملی ضروری است.",
-    link: "https://fa.wikipedia.org/wiki/JavaScript"
+  {
+    name: "کاپوچینو",
+    icon: <FaMugHot className="text-red-500" />,
+    description:
+      "کاپوچینو یک نوشیدنی قهوه‌ای است که از ترکیب قهوه اسپرسو، شیر بخار داده‌شده و کف شیر درست می‌شود. این نوشیدنی کلاسیک به خاطر طعم ملایم و لایه‌های نرم شیر شناخته شده است.",
+    link: "https://fa.wikipedia.org/wiki/Cappuccino",
   },
-  { 
-    name: "React", 
-    icon: "animate-flash fab fa-react text-blue-500", 
-    description: "React یک کتابخانه جاوا اسکریپت است که توسط فیس‌بوک ساخته شده و برای ساخت رابط‌های کاربری (UI) پویا و قابل مقیاس‌پذیر استفاده می‌شود. React از مفهوم کامپوننت‌ها برای ساختاردهی و مدیریت اپلیکیشن‌های وب استفاده می‌کند. این کتابخانه با استفاده از Virtual DOM سرعت بالایی در بارگذاری صفحات وب ارائه می‌دهد و تجربه کاربری بهتری ایجاد می‌کند.",
-    link: "https://fa.wikipedia.org/wiki/React"
+  {
+    name: "لاته",
+    icon: <FaGlassWhiskey className="text-white" />,
+    description:
+      "لاته یک نوع قهوه است که از ترکیب قهوه اسپرسو و شیر بخار داده‌شده ساخته می‌شود. این نوشیدنی به دلیل طعم ملایم و کرمی‌اش و همچنین مقدار زیادی شیر نسبت به سایر قهوه‌ها محبوب است.",
+    link: "https://fa.wikipedia.org/wiki/Latte",
   },
-  { 
-    name: "Next.js", 
-    icon: "animate-flash fas fa-layer-group text-yellow-400", 
-    description: "Next.js یک فریم‌ورک محبوب برای React است که امکاناتی همچون رندرینگ سمت سرور (SSR) و رندرینگ ایستا (Static Site Generation) را فراهم می‌کند. این فریم‌ورک به شما امکان می‌دهد تا اپلیکیشن‌های وب سریع‌تر و بهینه‌تر بسازید. همچنین با پشتیبانی از مسیریابی خودکار، می‌توانید برنامه‌های پیچیده را با سادگی بیشتری مدیریت کنید.",
-    link: "https://fa.wikipedia.org/wiki/Next.js"
+  {
+    name: "ماسالا",
+    icon: <FaLeaf className="text-orange-500" />,
+    description:
+      "چای ماسالا یک نوشیدنی هندی است که از ترکیب چای سیاه و ادویه‌جات معطر مانند دارچین، زنجبیل، هل، میخک و فلفل سیاه درست می‌شود. این نوشیدنی با طعم‌های پیچیده و معطر خود محبوبیت جهانی پیدا کرده است.",
+    link: "https://fa.wikipedia.org/wiki/Masala_tea",
   },
-  { 
-    name: "Tailwind CSS", 
-    icon: "animate-flash fas fa-wind text-blue-500", 
-    description: "Tailwind CSS یک فریم‌ورک CSS utility-first است که برای ساخت طراحی‌های انعطاف‌پذیر و سریع استفاده می‌شود. برخلاف فریم‌ورک‌های CSS دیگر که شامل کلاس‌های از پیش تعریف‌شده برای طراحی هستند، Tailwind به شما ابزارهایی می‌دهد تا سبک‌ها را مستقیماً در HTML و JSX تنظیم کنید. این روش به شما کمک می‌کند تا کد تمیزتر و قابل نگهداری‌تری داشته باشید.",
-    link: "https://fa.wikipedia.org/wiki/Tailwind_CSS"
+  {
+    name: "اسپرسو",
+    icon: <FaCoffee className="text-black" />,
+    description:
+      "اسپرسو یک نوع قهوه بسیار غلیظ و قوی است که در آن آب با فشار از میان دانه‌های آسیاب‌شده عبور می‌کند. این قهوه به دلیل طعم غنی و معطر خود، پایه‌گذار سایر نوشیدنی‌های قهوه است.",
+    link: "https://fa.wikipedia.org/wiki/Espresso",
   },
-  { 
-    name: "Bootstrap", 
-    icon: "animate-flash fab fa-bootstrap text-green-500", 
-    description: "Bootstrap یک فریم‌ورک محبوب CSS است که برای طراحی وب‌سایت‌های واکنش‌گرا و موبایل‌فرندلی طراحی شده است. این فریم‌ورک شامل مجموعه‌ای از اجزای رابط کاربری، طرح‌بندی‌ها و الگوهای طراحی است که به شما کمک می‌کند وب‌سایت‌های زیبا و کاربرپسند بسازید. Bootstrap به راحتی با JavaScript ادغام می‌شود و باعث می‌شود فرآیند توسعه سریع‌تر شود.",
-    link: "https://fa.wikipedia.org/wiki/Bootstrap"
+  {
+    name: "آمریکانو",
+    icon: <FaCocktail className="text-blue-400" />,
+    description:
+      "آمریکانو یک نوشیدنی قهوه‌ای است که از ترکیب اسپرسو و آب داغ درست می‌شود. طعم این نوشیدنی شبیه به قهوه فیلتر است اما غلظت کمتری دارد.",
+    link: "https://fa.wikipedia.org/wiki/Americano",
   },
-  { 
-    name: "GitHub", 
-    icon: "animate-flash fab fa-github text-orange-500", 
-    description: "GitHub یک پلتفرم برای کنترل نسخه و همکاری در پروژه‌های نرم‌افزاری است. این سرویس به برنامه‌نویسان این امکان را می‌دهد که کدهای خود را به صورت آنلاین ذخیره کنند، تغییرات را پیگیری کنند و به راحتی با سایر توسعه‌دهندگان همکاری کنند. GitHub از Git به عنوان سیستم کنترل نسخه استفاده می‌کند و بسیاری از پروژه‌های متن‌باز در این پلتفرم میزبانی می‌شوند.",
-    link: "https://fa.wikipedia.org/wiki/GitHub"
-  },
-  { 
-    name: "Typing touch", 
-    icon: "animate-flash fas fa-keyboard text-amber-300", 
-    description: "Typing touch به مهارت تایپ بدون نگاه به صفحه کلید اطلاق می‌شود. این مهارت به کاربران کمک می‌کند تا به سرعت و با دقت بالا تایپ کنند. با استفاده از تایپ صحیح و کارآمد، می‌توان زمان خود را صرفه‌جویی کرد و بهره‌وری را افزایش داد. این مهارت برای افرادی که به طور مداوم با متن سر و کار دارند، بسیار ضروری است.",
-    link: "https://fa.wikipedia.org/wiki/Typing"
+  {
+    name: "موکا",
+    icon: <FaBeer className="text-green-600" />,
+    description:
+      "موکا یک نوع نوشیدنی قهوه است که از ترکیب اسپرسو، شیر بخار داده‌شده و شکلات درست می‌شود. این نوشیدنی با طعم شیرین و شکلاتی خود، به‌ویژه برای علاقه‌مندان به شکلات مناسب است.",
+    link: "https://fa.wikipedia.org/wiki/Mocha",
   },
 ];
 
@@ -62,35 +73,41 @@ const DescForSkill = () => {
   return (
     <Container className="py-5 md:w-3/5">
       <h2 className="bg-dark text-4xl w-full text-white text-center py-3 px-8 rounded-lg mb-4">
-        توضیح مهارت‌ها
+        توضیح قهوه ها
       </h2>
 
-     <Carousel className=''>
-  {skills.map((skill, index) => (
-    <Carousel.Item key={index} className="animate__animated animate__fadeIn">
-      <Card className="text-center p-3 bg-dark text-white rounded-lg">
-        <Card.Body>
-          <Card.Title className="d-flex justify-content-center align-items-center mb-4 min-w-min bg-black/60">
-            <i className={`${skill.icon} text-4xl me-3`}></i>
-            {skill.name}
-          </Card.Title>
-          <Card.Text className="bg-white text-dark p-3 rounded-lg">
-            {skill.description}
-          </Card.Text>
+      {/* استفاده از Carousel برای اسلایدها */}
+      <Carousel className="">
+        {skills.map((skill, index) => (
+          <Carousel.Item key={index} className="animate__animated animate__fadeIn">
+            <Card className="text-center p-3 bg-dark text-white rounded-lg">
+              <Card.Body>
+                {/* عنوان و آیکون */}
+                <Card.Title className="d-flex justify-content-center align-items-center mb-4 min-w-min bg-black/60">
+                  <div className="text-4xl me-3 transition-transform transform hover:scale-110">
+                    {skill.icon}
+                  </div>
+                  {skill.name}
+                </Card.Title>
 
-          <Button
-            variant="outline-light"
-            className="mt-3 px-6 py-3 rounded-lg shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-            onClick={() => window.open(skill.link, "_blank")}
-          >
-            جزئیات بیشتر
-          </Button>
-        </Card.Body>
-      </Card>
-    </Carousel.Item>
-  ))}
-</Carousel>
+                {/* توضیحات */}
+                <Card.Text className="bg-white text-dark p-3 rounded-lg">
+                  {skill.description}
+                </Card.Text>
 
+                {/* دکمه جزئیات بیشتر */}
+                <Button
+                  variant="outline-light"
+                  className="mt-3 px-6 py-3 rounded-lg shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  onClick={() => window.open(skill.link, "_blank")}
+                >
+                  جزئیات بیشتر
+                </Button>
+              </Card.Body>
+            </Card>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </Container>
   );
 };

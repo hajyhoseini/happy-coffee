@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaCoffee } from 'react-icons/fa'; // آیکون فنجان قهوه از Font Awesome
 
 const MobileButton = ({ setIsSidebarOpen }) => {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleClick = () => {
+    setIsAnimating(true); // فعال کردن انیمیشن قهوه
+    setTimeout(() => {
+      setIsAnimating(false); // بعد از انیمیشن قهوه
+      setIsSidebarOpen(true); // باز کردن سایدبار
+    }, 600); // مدت زمان انیمیشن قهوه
+  };
+
   return (
     <button
-      onClick={() => setIsSidebarOpen(true)}
-      className="fixed top-4 left-4 bg-blue-500 text-white px-4 py-2 rounded-full z-50"
+      onClick={handleClick}
+      className="fixed top-4 left-4 bg-yellow-700 text-white px-3 py-3 rounded-full z-50 shadow-lg hover:bg-yellow-500 transition-all duration-300 flex items-center"
     >
-      ☰
+      <FaCoffee className={isAnimating ? 'coffee-tilt' : ''} /> {/* اضافه کردن انیمیشن */}
     </button>
   );
 };
