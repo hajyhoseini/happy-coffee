@@ -90,3 +90,11 @@ body {
   background: linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.6) 50%);
   animation: lightning 1.5s linear infinite;
 }
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* تغییر جهت لیست به عمودی در موبایل */
+  }
+  nav ul li {
+    width: 100%; /* دکمه‌ها عرض کامل را در موبایل خواهند گرفت */
+  }
+}

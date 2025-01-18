@@ -10,49 +10,55 @@ const skills = [
   { name: "Typing touch", icon: "animate-flash fas fa-keyboard text-amber-300", level: 70 },
 ];
 
-const Skills = () => (
-  <section id="skills" className="relative rounded-lg p-5 w-full py-16 px-10 bg-gradient-to-r from-teal-500 via-green-400 to-blue-500 shadow-lg">
-    {/* تایتل بخش مهارت‌ها */}
-    <h3 className="bg-black/60 text-4xl font-extrabold text-center mb-12 text-white shadow-md py-3 px-8 rounded-lg">
-      مهارت‌ها
-    </h3>
+import { Container, Row, Col, ProgressBar } from 'react-bootstrap';
 
-    {/* لیست مهارت‌ها */}
-    <div className="text-black bg-black/60 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-10 max-w-3xl mx-auto">
-      {skills.map((skill) => {
-        // انتخاب رنگ نوار مهارت‌ها بر اساس سطح مهارت
-        const barColor = skill.level > 80 
-          ? 'bg-green-500' 
-          : skill.level > 60 
-          ? 'bg-yellow-500' 
-          : 'bg-red-500';
+const Skills = () => {
+  return (
+    <section id="skills" className="relative max-w-3xl mx-auto rounded-lg p-5 w-full py-16 px-10 bg-gradient-to-r from-teal-500 via-green-400 to-blue-500 shadow-lg">
+      {/* تایتل بخش مهارت‌ها */}
+      <h3 className="bg-black/60 text-4xl font-extrabold text-center mb-12 text-white shadow-md py-3 px-8 rounded-lg">
+        مهارت‌ها
+      </h3>
 
-        return (
-          <div key={skill.name} className="flex flex-col items-center text-center">
-            {/* آیکون مهارت */}
-            <i 
-              className={`${skill.icon} text-8xl mb-4 transition-transform transform hover:scale-110`} 
-              aria-label={skill.name} 
-            ></i>
+      {/* لیست مهارت‌ها */}
+      <Container className="d-flex justify-content-center">
+        <Row className="text-black bg-black/60 justify-content-center w-100">
+          {skills.map((skill) => {
+            // انتخاب رنگ نوار مهارت‌ها بر اساس سطح مهارت
+            const barColor = skill.level > 80 
+              ? 'success' 
+              : skill.level > 60 
+              ? 'warning' 
+              : 'danger';
 
-            {/* نام مهارت */}
-            <p className="font-semibold text-xl text-white mb-4">{skill.name}</p>
+            return (
+              <Col key={skill.name} xs={6} sm={4} lg={4} className="d-flex flex-column align-items-center text-center mb-5">
+                {/* آیکون مهارت */}
+                <i 
+                  className={`${skill.icon} text-8xl mb-4 transition-transform transform hover:scale-110`} 
+                  aria-label={skill.name} 
+                ></i>
 
-            {/* نوار درجه مهارت */}
-            <div className="w-full bg-white/20 rounded-full h-4 mt-2">
-              <div
-                className={`${barColor} h-4 rounded-full`}
-                style={{ width: `${(skill.level * 0.75)}%` }}  /* اندازه نوار درجه به سه چهارم کاهش یافت */
-              ></div>
-            </div>
+                {/* نام مهارت */}
+                <p className="font-semibold text-xl text-white mb-4">{skill.name}</p>
 
-            {/* درصد مهارت */}
-            <div className="text-white text-lg mt-2">{skill.level}%</div>
-          </div>
-        );
-      })}
-    </div>
-  </section>
-);
+                {/* نوار درجه مهارت */}
+                <ProgressBar 
+                  now={skill.level * 0.75}  // اندازه نوار درجه به سه چهارم کاهش یافته است
+                  variant={barColor}
+                  className="w-100"
+                  style={{ height: '10px', borderRadius: '20px' }}
+                />
+
+                {/* درصد مهارت */}
+                <div className="text-white text-lg mt-2">{skill.level}%</div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
+    </section>
+  );
+};
 
 export default Skills;

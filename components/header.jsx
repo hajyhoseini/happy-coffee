@@ -3,7 +3,7 @@ import NavMenu from './navMenu';
 
 const Header = () => {
   return (
-    <header className="w-full py-1 shadow-lg bg-custom-header-img bg-cover bg-center fixed top-0 left-0 right-0 z-50">
+    <header className="w-full  shadow-lg bg-custom-header-img bg-cover bg-center fixed top-0 left-0 right-0 z-50">
       {/* بخش خوشامدگویی */}
       <div className="relative bg-blue-800 text-white text-center py-1 px-3 font-semibold text-xs sm:text-xs shadow-md z-10 max-w-screen-lg mx-auto rounded-xl overflow-hidden">
         {/* خط برق سفید متحرک */}
@@ -26,7 +26,7 @@ const Header = () => {
       </div>
 
       {/* محتوای مرکزی (بین خوشامدگویی و منو) */}
-      <div className="container mx-auto flex justify-center items-center px-4 sm:px-6 text-black mt-4">
+      <div className="container mx-auto flex justify-center items-center px-4 sm:px-6 text-black ">
         {/* بخش تصویر و متن */}
         <div className="flex items-end text-center lg:text-left">
           <img 
