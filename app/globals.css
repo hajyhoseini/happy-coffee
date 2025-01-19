@@ -126,3 +126,87 @@ body {
 .sidebar-open {
   animation: slideIn 0.5s ease-out forwards;
 }
+/* استایل عمومی برای انیمیشن */
+@keyframes smileAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* نیم دایره قرمز و انیمیشن لبخند */
+.animateWarmText {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  padding: 10px 20px;
+  animation: smileAnimation 1s ease-out forwards;
+}
+
+/* استایل برای شکلک لبخند */
+.smiley {
+  margin-right: 8px;
+  font-size: 2.5rem; /* اندازه شکلک */
+  animation: smileAnimation 1s ease-out forwards;
+}
+
+/* فقط در حالت موبایل (مدیا کوئری برای صفحه‌های کوچکتر از 768px) */
+@media (max-width: 768px) {
+  .animateWarmText {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+
+  .smiley {
+    font-size: 2rem; /* اندازه شکلک در موبایل */
+  }
+}
+/* استایل‌های دکمه تماس */
+.bg-brown-600 {
+  background-color: #6b4f3f; /* رنگ قهوه‌ای تیره */
+}
+
+/* استایل‌های آیتم‌های منو */
+.support-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #6b4f3f; /* رنگ قهوه‌ای */
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.support-item:hover {
+  background-color: #f0e6d2; /* رنگ پس‌زمینه روشن و گرم */
+}
+
+/* آیکون‌های تماس */
+.support-item svg {
+  margin-right: 8px;
+  color: #6b4f3f; /* رنگ آیکون‌ها برای هماهنگی با دکمه */
+}
+
+/* حالت‌ها و استایل‌ها برای فونت‌ها */
+@media (max-width: 768px) {
+  .support-button {
+    padding: 12px;
+    font-size: 20px;
+  }
+
+  .support-menu {
+    width: 170px;
+  }
+}

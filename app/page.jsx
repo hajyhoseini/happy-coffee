@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import Head from "next/head";
-import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import MobileButton from "@/components/MobileButton";
 import SidebarMain from "@/components/sidebarMain";
 import DescForSkill from "@/components/descForSkill";
+import Description from "@/components/description";
+import Tastes from "@/components/tastes";
+import CallToHelper from "@/components/callToHelper";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -48,6 +49,7 @@ export default function Home() {
         setIsSidebarOpen={setIsSidebarOpen} 
         isSidebarOpen={isSidebarOpen} 
       />
+      <CallToHelper/>
 
       {/* محتوای اصلی */}
       <main
@@ -69,7 +71,8 @@ export default function Home() {
 
         {/* محتوای کامپوننت‌ها */}
         <div>
-          <Skills />
+          <Description/>
+          <Tastes />
           <DescForSkill />
           <Projects />
         </div>

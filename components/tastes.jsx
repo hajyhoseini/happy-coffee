@@ -2,18 +2,18 @@ import React from "react";
 import { Container, Row, Col, ProgressBar } from "react-bootstrap";
 import { FaHotjar, FaCoffee, FaMugHot, FaGlassWhiskey, FaLeaf, FaCocktail, FaBeer } from "react-icons/fa"; // آیکون‌های قهوه
 const flavors = [
-  { name: "هات چاکلت", icon: <FaHotjar className="text-yellow-800" />, level: 90 },
-  { name: "نسکافه", icon: <FaCoffee className="text-yellow-600" />, level: 85 },
-  { name: "کاپوچینو", icon: <FaMugHot className="text-red-500" />, level: 90 },
-  { name: "لاته", icon: <FaGlassWhiskey className="text-white" />, level: 75 },
-  { name: "ماسالا", icon: <FaLeaf className="text-orange-500" />, level: 80 },
-  { name: "اسپرسو", icon: <FaCoffee className="text-black" />, level: 85 },
-  { name: "آمریکانو", icon: <FaCocktail className="text-blue-400" />, level: 75 },
-  { name: "موکا", icon: <FaBeer className="text-green-600" />, level: 80 },
+  { name: "هات چاکلت", icon: <FaHotjar className="text-yellow-800 animate-flash" />, level: 90 },
+  { name: "نسکافه", icon: <FaCoffee className="text-yellow-600 animate-flash" />, level: 85 },
+  { name: "کاپوچینو", icon: <FaMugHot className="text-red-500 animate-flash" />, level: 90 },
+  { name: "لاته", icon: <FaGlassWhiskey className="text-white animate-flash" />, level: 75 },
+  { name: "ماسالا", icon: <FaLeaf className="text-orange-500 animate-flash" />, level: 80 },
+  { name: "اسپرسو", icon: <FaCoffee className="text-black animate-flash" />, level: 85 },
+  { name: "آمریکانو", icon: <FaCocktail className="text-blue-400 animate-flash" />, level: 75 },
+  { name: "موکا", icon: <FaBeer className="text-green-600 animate-flash" />, level: 80 },
 ];
 
 
-const Skills = () => {
+const Tastes = () => {
   return (
     <section
       id="skills"
@@ -26,7 +26,7 @@ const Skills = () => {
 
       {/* لیست طعم‌ها */}
       <Container className="d-flex justify-content-center">
-        <Row className="text-black bg-black/60 justify-content-center w-100">
+        <Row className="text-black bg-black/70 justify-content-center w-100">
           {flavors.map((flavor) => {
             // انتخاب رنگ نوار بر اساس سطح
             const barColor =
@@ -73,5 +73,5 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Tastes;
 
