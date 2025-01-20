@@ -20,7 +20,7 @@ const Tastes = () => {
       className="relative max-w-3xl mx-auto rounded-lg p-5 w-full py-16 px-10 bg-gradient-to-r from-teal-500 via-green-400 to-blue-500 shadow-lg"
     >
       {/* تایتل بخش طعم‌ها */}
-      <h3 className="bg-black/60 text-4xl font-extrabold text-center mb-12 text-white shadow-md py-3 px-8 rounded-lg">
+      <h3 className="bg-black/60 text-2xl md:text-4xl font-extrabold text-center mb-12 text-white shadow-md py-3 px-8 rounded-lg">
       طعم‌ها و میزان رضایت 
       </h3>
 

@@ -15,9 +15,9 @@ const MobileButton = ({ setIsSidebarOpen }) => {
   return (
     <button
       onClick={handleClick}
-      className="fixed top-4 left-4 bg-yellow-700 text-white px-3 py-3 rounded-full z-50 shadow-lg hover:bg-yellow-500 transition-all duration-300 flex items-center"
+      className="fixed top-4 left-4 bg-yellow-700 text-white px-3 py-2 rounded-full z-50 shadow-lg hover:bg-yellow-500 transition-all duration-300 flex items-center"
     >
-      <FaCoffee className={isAnimating ? 'coffee-tilt' : ''} size={26} /> {/* تغییر اندازه آیکون */}
+      <FaCoffee className={isAnimating ? 'coffee-tilt' : ''} size={22} /> {/* تغییر اندازه آیکون */}
     </button>
   );
 };

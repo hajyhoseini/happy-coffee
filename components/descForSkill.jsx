@@ -91,7 +91,7 @@ const DescForSkill = () => {
                 </Card.Title>
 
                 {/* توضیحات */}
-                <Card.Text className="bg-white text-dark p-3 rounded-lg">
+                <Card.Text className="bg-white text-dark text-sm md:text-xl p-3 rounded-lg">
                   {skill.description}
                 </Card.Text>
 

@@ -8,6 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'brown-700': '#6B4F4F',
+        'brown-800': '#4A3B3B',
+        beige: {
+          50: '#f5f5dc', // یا رنگ مورد نظر خود را وارد کنید
+        },
          customWhite: 'rgba(240, 240, 255, 0.7)',
                 background: "var(--background)",
         foreground: "var(--foreground)",
