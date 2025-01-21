@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaPhoneAlt, FaWhatsapp, FaTelegramPlane } from "react-icons/fa"; // آیکون‌های فونت آوسوم
 import { Button } from "react-bootstrap"; // استفاده از دکمه‌های React-Bootstrap
 
-const SupportButton = () => {
+const CallToHelper = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // برای ذخیره کردن رفرنس‌های دکمه و منو
@@ -53,21 +53,21 @@ const SupportButton = () => {
             href="tel:+1234567890"
             className="flex items-center p-3 text-white hover:bg-green-800 rounded-lg transition-all transform hover:scale-105"
           >
-            <FaPhoneAlt className="mr-3 text-brown-600" size={24} />
+            <FaPhoneAlt className="ml-3 text-green-600" size={24} />
             تماس تلفنی
           </a>
           <a
             href="https://wa.me/1234567890"
             className="flex items-center p-3 text-white hover:bg-green-800 rounded-lg transition-all transform hover:scale-105"
           >
-            <FaWhatsapp className="mr-3 text-green-500" size={24} />
+            <FaWhatsapp className="ml-3 text-green-500" size={24} />
             واتس‌اپ
           </a>
           <a
             href="https://t.me/yourtelegramusername"
             className="flex items-center p-3 text-white hover:bg-green-800 rounded-lg transition-all transform hover:scale-105"
           >
-            <FaTelegramPlane className="mr-3 text-blue-500" size={24} />
+            <FaTelegramPlane className="ml-3 text-blue-500" size={24} />
             تلگرام
           </a>
         </div>
@@ -76,4 +76,4 @@ const SupportButton = () => {
   );
 };
 
-export default SupportButton;
+export default CallToHelper;

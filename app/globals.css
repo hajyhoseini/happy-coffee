@@ -210,3 +210,19 @@ body {
     width: 170px;
   }
 }
+/* انیمیشن ضربان دار */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* بزرگ شدن در وسط انیمیشن */
+  }
+  100% {
+    transform: scale(1); /* بازگشت به اندازه اولیه */
+  }
+}
+
+.heart-pulse {
+  animation: heartbeat 1.5s infinite; /* انیمیشن ضربان دار با زمان 1.5 ثانیه */
+}

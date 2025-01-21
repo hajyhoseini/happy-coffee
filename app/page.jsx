@@ -1,13 +1,19 @@
 'use client';
-
 import { useState, useEffect } from "react";
-import Projects from "@/components/Projects";
-import MobileButton from "@/components/MobileButton";
-import SidebarMain from "@/components/sidebarMain";
-import DescForSkill from "@/components/descForSkill";
-import Description from "@/components/description";
-import Tastes from "@/components/tastes";
-import CallToHelper from "@/components/callToHelper";
+import MobileButton from "@/components/detailical/MobileButton";
+import DescForSkill from "@/components/main/descForSkill";
+import Description from "@/components/main/description";
+import Projects from "@/components/main/Projects";
+import SidebarMain from "@/components/main/sidebarMain";
+import Tastes from "@/components/main/tastes";
+import CallToHelper from "@/components/detailical/callToHelper";
+import CoffeeShop from "@/components/main/coffeeShop";
+// import Projects from "@/components/Projects";
+// import MobileButton from "@/components/MobileButton";
+// import SidebarMain from "@/components/sidebarMain";
+// import DescForSkill from "@/components/descForSkill";
+// import Description from "@/components/description";
+// import Tastes from "@/components/tastes";
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -35,7 +41,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div
+ 
+     <div
       className={`relative bg-custom-image-main min-h-screen transition-all duration-300 ${
         isMobile
           ? "flex flex-col" // در حالت موبایل، چینش عمودی
@@ -49,8 +56,7 @@ export default function Home() {
         setIsSidebarOpen={setIsSidebarOpen} 
         isSidebarOpen={isSidebarOpen} 
       />
-      <CallToHelper/>
-
+<CallToHelper />
       {/* محتوای اصلی */}
       <main
         className={`transition-all duration-300 p-4 relative ${
@@ -73,10 +79,12 @@ export default function Home() {
         <div>
           <Description/>
           <Tastes />
+          <CoffeeShop/>
           <DescForSkill />
           <Projects />
         </div>
       </main>
     </div>
+
   );
 }

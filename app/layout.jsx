@@ -5,10 +5,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "fontsource-vazir";
 import "@fortawesome/fontawesome-free/css/all.css";
-import Contact from "@/components/Contact";
-import Header from "@/components/header";
 import Head from 'next/head';
-import HeaderAuth from '@/components/headerAuth';
+import Contact from '@/components/main/Contact';
+import Header from '@/components/main/header';
+import HeaderAuth from '@/components/detailical/headerAuth';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,7 +81,7 @@ export default function Layout({ children }) {
 
 </Head>
 
-
+<ThemeProvider>
 
       <html lang="en" dir="rtl">
         <body>
@@ -106,6 +107,7 @@ export default function Layout({ children }) {
           )}
         </body>
       </html>
+      </ThemeProvider>
     </>
   );
 }

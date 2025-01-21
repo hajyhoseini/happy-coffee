@@ -45,7 +45,7 @@ const Tastes = () => {
                 className="d-flex flex-column align-items-center text-center mb-5"
               >
                 {/* آیکون طعم */}
-                <div className="text-8xl mb-4 transition-transform transform hover:scale-110">
+                <div className="text-6xl lg:text-8xl mb-4 transition-transform transform hover:scale-110">
                   {flavor.icon}
                 </div>
 

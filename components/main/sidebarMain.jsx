@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarText from './SidebarText';
+import SidebarText from '../detailical/SidebarText';
 
 const SidebarMain = ({ isMobile, isOpen, setIsSidebarOpen, isSidebarOpen }) => {
   return (
