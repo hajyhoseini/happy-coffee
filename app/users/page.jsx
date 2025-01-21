@@ -1,7 +1,7 @@
 'use client';
 
-import MobileButton from '@/components/MobileButton';
-import SidebarMain from '@/components/sidebarMain';
+import MobileButton from '@/components/detailical/MobileButton';
+import SidebarMain from '@/components/main/sidebarMain';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -78,11 +78,11 @@ const Page = () => {
           <meta name="description" content="ساخته شده توسط A.h.h.81" />
         </Head>
       {/* سایدبار */}
-      <SidebarMain isMobile={isMobile} isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen} />
+      < SidebarMain isMobile={isMobile} isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} isSidebarOpen={isSidebarOpen} />
 
       {/* دکمه باز کردن سایدبار */}
       {isMobile && !isSidebarOpen && (
-        <MobileButton setIsSidebarOpen={setIsSidebarOpen} />
+        < MobileButton setIsSidebarOpen={setIsSidebarOpen} />
       )}
 
       {/* محتوای اصلی */}
