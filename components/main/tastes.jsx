@@ -4,8 +4,8 @@ import { FaHotjar, FaCoffee, FaMugHot, FaGlassWhiskey, FaLeaf, FaCocktail, FaBee
 import { useTheme } from "@/context/ThemeContext"; // استفاده از Context برای تم
 
 const flavors = [
-  { name: "هات " , icon: <FaHotjar className="text-yellow-800 animate-flash" />, level: 90 },
-  { name: "نسکافه", icon: <FaCoffee className="text-yellow-600 animate-flash" />, level: 85 },
+  { name: "هات " , icon: <FaHotjar className="text-yellow-950 animate-flash" />, level: 90 },
+  { name: "نسکافه", icon: <FaCoffee className="text-yellow-500 animate-flash" />, level: 85 },
   { name: "کاپوچینو", icon: <FaMugHot className="text-red-500 animate-flash" />, level: 90 },
   { name: "لاته", icon: <FaGlassWhiskey className="text-yellow-400 animate-flash" />, level: 75 },
   { name: "ماسالا", icon: <FaLeaf className="text-orange-500 animate-flash" />, level: 80 },
@@ -26,10 +26,9 @@ const Tastes = () => {
           : "bg-gradient-to-r from-teal-500 via-green-400 to-blue-500 text-black"
       } shadow-lg transition-all duration-500`}
     >
-      <h3
-        className={`${
-          isDarkMode ? "bg-black/60 text-white" : "bg-white/80 text-black"
-        } text-2xl md:text-4xl font-extrabold text-center mb-12 shadow-md py-3 px-8 rounded-lg transition-all duration-500 transform hover:scale-105`}
+      <h3  style={{ textShadow: "2px 2px 5px rgba(255, 223, 0, 0.7)" }}        className={`${
+          isDarkMode ? "bg-yellow-900/95 text-white" : "bg-yellow-800/95 text-black"
+        } text-3xl md:text-4xl font-extrabold text-center mb-12 shadow-md py-3 px-8 rounded-lg transition-all duration-500 transform hover:scale-105`}
       >
         طعم‌ها و میزان رضایت
       </h3>
@@ -37,7 +36,7 @@ const Tastes = () => {
       <Container className="d-flex justify-content-center">
         <Row
           className={`${
-            isDarkMode ? "bg-black/70 text-white" : "bg-white/80 text-black"
+            isDarkMode ? "bg-yellow-800/80 text-white" : "bg-yellow-700/80 text-black"
           } justify-content-center w-100 rounded-lg shadow-md p-6 transform transition-all duration-700 ease-in-out hover:scale-105`}
         >
           {flavors.map((flavor) => {

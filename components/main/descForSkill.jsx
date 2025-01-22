@@ -78,7 +78,7 @@ const DescForSkill = () => {
       <h2
         className={`${
           isDarkMode
-            ? "bg-black/60 text-white"
+            ? "bg-yellow-900/95 text-white"
             : " text-black backdrop-blur-lg"
         } text-4xl w-full text-center py-3 px-8 rounded-lg mb-4 shadow-lg`}
         style={{ textShadow: "2px 2px 5px rgba(255, 223, 0, 0.7)" }}

@@ -41,8 +41,9 @@ const Description = () => {
         }`}
       >
         <h3
+         style={{ textShadow: "2px 2px 5px rgba(255, 223, 0, 0.7)" }}
           className={`${
-            isDarkMode ? "bg-black/60 text-white" : "bg-white/80 text-black"
+            isDarkMode ? "bg-yellow-900/95 text-white" : "bg-yellow-800/95 text-black"
           } text-2xl md:text-4xl font-extrabold text-center mb-12 shadow-md py-3 px-8 rounded-lg transition-all duration-500 transform hover:scale-105 flex justify-center flex-col items-center space-x-2`}
         >
           <span>چرا هپی کافی؟ چون هر فنجان، لبخندی است! </span>
@@ -54,7 +55,7 @@ const Description = () => {
         <Container className="d-flex justify-content-center">
           <Row
             className={`${
-              isDarkMode ? "bg-black/70 text-white" : "bg-white/80 text-black"
+              isDarkMode ? "bg-yellow-800/95 text-white" : "bg-yellow-700/95 text-black"
             } justify-content-center w-100 rounded-lg shadow-md p-6 transform transition-all duration-700 ease-in-out hover:scale-105`}
           >
             <Col>

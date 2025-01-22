@@ -22,7 +22,7 @@ const Header = () => {
             d="M0,128L1440,32L1440,320L0,320Z"
           />
         </svg>
-        <p className="relative text-xs sm:text-xs lg:text-base font-extrabold text-gray-100 z-30">
+        <p className={`${isDarkMode? "text-yellow-200":"text-white"}  relative text-xs sm:text-xs lg:text-base font-extrabold text-gray-100 z-30{}`}>
           🎉 به "هپی کافی" خوش آمدید! 🎉 <br /> قهوه‌ی شما در انتظار است!
         </p>
       </div>
