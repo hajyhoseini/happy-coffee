@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import WelcomeModal from "./welcomeModal";
 import { useTheme } from "@/context/ThemeContext";
+import { FaCoffee } from "react-icons/fa"; // اضافه کردن آیکون قهوه
 
 const Description = () => {
   const [showModal, setShowModal] = useState(true);
@@ -36,37 +37,36 @@ const Description = () => {
       <section
         id="skills"
         className={`relative max-w-3xl mx-auto rounded-xl p-8 w-full py-16 px-12 ${
-          isDarkMode
-            ? " text-white shadow-xl "  // حالت شب با افکت بلور
-            : " text-black shadow-xl " // حالت روز با افکت بلور
+          isDarkMode ? " text-white shadow-xl" : " text-black shadow-xl"
         }`}
       >
         <h3
           className={`${
             isDarkMode ? "bg-black/60 text-white" : "bg-white/80 text-black"
-          } text-2xl md:text-4xl font-extrabold text-center  mb-12 shadow-md py-3 px-8 rounded-lg`}
+          } text-2xl md:text-4xl font-extrabold text-center mb-12 shadow-md py-3 px-8 rounded-lg transition-all duration-500 transform hover:scale-105 flex justify-center flex-col items-center space-x-2`}
         >
-          رسالت هپی کافی چیه؟
+          <span>چرا هپی کافی؟ چون هر فنجان، لبخندی است! </span>
+          <div className="smiley-container">
+            <span className="smiley">😊</span>
+          </div>
         </h3>
 
         <Container className="d-flex justify-content-center">
           <Row
             className={`${
               isDarkMode ? "bg-black/70 text-white" : "bg-white/80 text-black"
-            } justify-content-center w-100 rounded-lg shadow-md p-6`}
+            } justify-content-center w-100 rounded-lg shadow-md p-6 transform transition-all duration-700 ease-in-out hover:scale-105`}
           >
             <Col>
-              <p className="md:text-lg text-center leading-relaxed">
-                هپی کافی، جایی است که طعم واقعی قهوه را می‌توانید در هر جرعه احساس کنید. ما در هپی کافی به شما تجربه‌ای می‌دهیم که هر فنجان قهوه‌مان لبخند را بر لبانتان می‌آورد. اینجا قهوه تنها یک نوشیدنی نیست، بلکه یک لحظه از شادی است. 
-                ما بهترین دانه‌های قهوه را با دقت و عشق انتخاب کرده‌ایم تا طعم و عطر آن همیشه خاطره‌انگیز باشد. هدف ما این است که در هر فنجان قهوه‌، نه تنها طعم لذت‌بخش را تجربه کنید، بلکه حس خوب و دلگرم‌کننده‌ای را نیز با خود ببرید. 
-                هپی کافی، همیشه در کنار شماست تا روزتان را با یک لبخند شیرین آغاز کنید. 
+              <p className="md:text-lg text-center leading-relaxed transition-all duration-500 ease-in-out">
+                در <strong>هپی کافی</strong>، هر فنجان قهوه بیشتر از یک نوشیدنی است؛ یک تجربه خوشایند که روز شما را بهتر می‌کند. با بهترین دانه‌های قهوه، ما هدف داریم هر جرعه لبخند و لحظات خوشی را برای شما بیاوریم. چرا که اعتقاد داریم: <strong>هر فنجان قهوه، یک لبخند است.</strong> ☕💛
                 <span
                   id="warmText"
                   className={`${isVisible ? "animateWarmText" : ""} ${
                     isDarkMode ? "text-white" : "text-black"
-                  }`}
+                  } transition-all duration-500 ease-in-out`}
                 >
-                  <span className="smiley">😊</span> دمتان گرم!
+                  دمتان گرم!
                 </span>
               </p>
             </Col>

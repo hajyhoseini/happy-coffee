@@ -1,34 +1,47 @@
 import React from "react";
 import { Container, Row, Col, ProgressBar } from "react-bootstrap";
 import { FaHotjar, FaCoffee, FaMugHot, FaGlassWhiskey, FaLeaf, FaCocktail, FaBeer } from "react-icons/fa"; // آیکون‌های قهوه
+import { useTheme } from "@/context/ThemeContext"; // استفاده از Context برای تم
+
 const flavors = [
-  { name: "هات چاکلت", icon: <FaHotjar className="text-yellow-800 animate-flash" />, level: 90 },
+  { name: "هات " , icon: <FaHotjar className="text-yellow-800 animate-flash" />, level: 90 },
   { name: "نسکافه", icon: <FaCoffee className="text-yellow-600 animate-flash" />, level: 85 },
   { name: "کاپوچینو", icon: <FaMugHot className="text-red-500 animate-flash" />, level: 90 },
-  { name: "لاته", icon: <FaGlassWhiskey className="text-white animate-flash" />, level: 75 },
+  { name: "لاته", icon: <FaGlassWhiskey className="text-yellow-400 animate-flash" />, level: 75 },
   { name: "ماسالا", icon: <FaLeaf className="text-orange-500 animate-flash" />, level: 80 },
-  { name: "اسپرسو", icon: <FaCoffee className="text-black animate-flash" />, level: 85 },
+  { name: "اسپرسو", icon: <FaCoffee className="text-gray-500 animate-flash" />, level: 85 },
   { name: "آمریکانو", icon: <FaCocktail className="text-blue-400 animate-flash" />, level: 75 },
   { name: "موکا", icon: <FaBeer className="text-green-600 animate-flash" />, level: 80 },
 ];
 
-
 const Tastes = () => {
+  const { isDarkMode } = useTheme(); // استفاده از تم تاریک یا روشن
+
   return (
     <section
       id="skills"
-      className="relative max-w-3xl mx-auto rounded-lg p-5 w-full py-16 px-10 bg-gradient-to-r from-teal-500 via-green-400 to-blue-500 shadow-lg"
+      className={`relative max-w-3xl mx-auto rounded-lg p-5 w-full py-16 px-10 ${
+        isDarkMode
+          ? "bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white"
+          : "bg-gradient-to-r from-teal-500 via-green-400 to-blue-500 text-black"
+      } shadow-lg transition-all duration-500`}
     >
-      {/* تایتل بخش طعم‌ها */}
-      <h3 className="bg-black/60 text-2xl md:text-4xl font-extrabold text-center mb-12 text-white shadow-md py-3 px-8 rounded-lg">
-      طعم‌ها و میزان رضایت 
+      <h3
+        className={`${
+          isDarkMode ? "bg-black/60 text-white" : "bg-white/80 text-black"
+        } text-2xl md:text-4xl font-extrabold text-center mb-12 shadow-md py-3 px-8 rounded-lg transition-all duration-500 transform hover:scale-105`}
+      >
+        طعم‌ها و میزان رضایت
       </h3>
 
-      {/* لیست طعم‌ها */}
       <Container className="d-flex justify-content-center">
-        <Row className="text-black bg-black/70 justify-content-center w-100">
+        <Row
+          className={`${
+            isDarkMode ? "bg-black/70 text-white" : "bg-white/80 text-black"
+          } justify-content-center w-100 rounded-lg shadow-md p-6 transform transition-all duration-700 ease-in-out hover:scale-105`}
+        >
           {flavors.map((flavor) => {
-            // انتخاب رنگ نوار بر اساس سطح
+            // انتخاب رنگ نوار پیشرفت بر اساس سطح
             const barColor =
               flavor.level > 80
                 ? "success"
@@ -42,19 +55,22 @@ const Tastes = () => {
                 xs={6}
                 sm={4}
                 lg={4}
-                className="d-flex flex-column align-items-center text-center mb-5"
+                className="d-flex flex-column align-items-center text-center text-lg mb-5"
               >
-                {/* آیکون طعم */}
-                <div className="text-6xl lg:text-8xl mb-4 transition-transform transform hover:scale-110">
-                  {flavor.icon}
+                <div
+                  className="text-6xl lg:text-8xl mb-4 transition-transform transform hover:scale-110"
+                >
+                  {flavor.icon} {/* رنگ آیکون ثابت است */}
                 </div>
 
-                {/* نام طعم */}
-                <p className="font-semibold text-xl text-white mb-4">
+                <p
+                  className={`font-semibold text-xl mb-4 transition-all duration-500 ease-in-out ${
+                    isDarkMode ? "text-white" : "text-black"
+                  }`}
+                >
                   {flavor.name}
                 </p>
 
-                {/* نوار درجه طعم */}
                 <ProgressBar
                   now={flavor.level * 0.75} // اندازه نوار درجه به سه چهارم کاهش یافته است
                   variant={barColor}
@@ -62,8 +78,13 @@ const Tastes = () => {
                   style={{ height: "10px", borderRadius: "20px" }}
                 />
 
-                {/* درصد طعم */}
-                <div className="text-white text-lg mt-2">{flavor.level}%</div>
+                <div
+                  className={`text-lg mt-2 ${
+                    isDarkMode ? "text-white" : "text-black"
+                  }`}
+                >
+                  {flavor.level}%
+                </div>
               </Col>
             );
           })}
@@ -74,4 +95,3 @@ const Tastes = () => {
 };
 
 export default Tastes;
-

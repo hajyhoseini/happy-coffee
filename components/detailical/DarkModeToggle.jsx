@@ -5,13 +5,13 @@ const DarkModeToggle = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <div className="flex items-center mr-3 mt-1 space-x-6">
-      <label className="relative inline-flex items-center cursor-pointer">
+    <div className={`fixed space-x-6 top-4 right-4  text-white px-2 py-2 rounded-full z-50 shadow-lg ${isDarkMode? " hover:bg-black" : "hover:hover:bg-yellow-500"}  transition-all duration-300 flex items-center`}>
+      <label className="relative inline-flex items-center cursor-pointer ">
         <input
           type="checkbox"
           checked={isDarkMode}
           onChange={toggleTheme}
-          className="sr-only"
+          className="sr-only bg-black"
         />
         {/* Background of the switch */}
         <span className="w-16 h-8 bg-gray-200 rounded-full dark:bg-gray-700"></span>

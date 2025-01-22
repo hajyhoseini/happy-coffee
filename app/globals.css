@@ -226,3 +226,48 @@ body {
 .heart-pulse {
   animation: heartbeat 1.5s infinite; /* انیمیشن ضربان دار با زمان 1.5 ثانیه */
 }
+.smiley-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.smiley {
+  font-size: 2.5rem; /* اندازه کوچکتر */
+  animation: smileyAnimation 1.5s infinite ease-in-out;
+}
+
+@keyframes smileyAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animateTyping {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid;
+  animation: typing 4s steps(40) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+}

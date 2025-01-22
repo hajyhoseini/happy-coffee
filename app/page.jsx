@@ -9,6 +9,7 @@ import Tastes from "@/components/main/tastes";
 import CallToHelper from "@/components/detailical/callToHelper";
 import CoffeeShop from "@/components/main/coffeeShop";
 import { ThemeProvider } from "react-bootstrap";
+import DarkModeToggle from "@/components/detailical/DarkModeToggle";
 // import Projects from "@/components/Projects";
 // import SidebarMain from "@/components/sidebarMain";
 // import DescForSkill from "@/components/descForSkill";
@@ -79,7 +80,6 @@ export default function Home() {
         <div>
           <Description/>
           <Tastes />
-          <CoffeeShop/>
           <DescForSkill />
           <Projects />
         </div>

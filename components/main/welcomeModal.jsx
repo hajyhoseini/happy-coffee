@@ -2,11 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { FaCoffee, FaHeart } from 'react-icons/fa';
 
-const WelcomeModal = ({ showModal, handleCloseModal }) => {
+const WelcomeModal = ({ handleCloseModal }) => {
   const [isBrowser, setIsBrowser] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setIsBrowser(true); // فقط در سمت کلاینت
+
+    // بررسی اینکه آیا کاربر قبلاً وارد سایت شده است یا نه
+    const hasVisitedBefore = localStorage.getItem('hasVisitedBefore');
+    if (!hasVisitedBefore) {
+      // اگر کاربر اولین بار است که وارد می‌شود، مدال نمایش داده می‌شود
+      setShowModal(true);
+      localStorage.setItem('hasVisitedBefore', 'true'); // ذخیره وضعیت بازدید کاربر
+    }
   }, []);
 
   if (!isBrowser) {
@@ -17,7 +26,10 @@ const WelcomeModal = ({ showModal, handleCloseModal }) => {
     <div>
       <Modal
         show={showModal}
-        onHide={handleCloseModal}
+        onHide={() => {
+          handleCloseModal();
+          setShowModal(false); // بسته شدن مدال بعد از کلیک
+        }}
         centered
         className="transition-all duration-500 ease-in-out transform scale-105"
       >
@@ -29,23 +41,26 @@ const WelcomeModal = ({ showModal, handleCloseModal }) => {
         </Modal.Header>
         <Modal.Body className="bg-light-brown text-brown-900 p-8 rounded-b-xl shadow-2xl">
           <p>
-            خوش آمدید به هپی کافی! اینجا جایی است که طعم واقعی قهوه را در هر جرعه حس خواهید کرد
-            امیدواریم لحظات خوبی را در کنار ما <span className="inline-flex items-center">تجربه کنید. </span>
+            خوش آمدید به هپی کافی! اینجا جایی است که طعم واقعی قهوه را در هر جرعه حس خواهید کرد.
+            امیدواریم لحظات خوبی را در کنار ما <span className="inline-flex items-center">تجربه کنید.</span>
           </p>
 
           <div className="flex justify-center mt-8">
             <Button
               variant="primary"
-              onClick={handleCloseModal}
+              onClick={() => {
+                setShowModal(false); // برای بستن مدال بعد از کلیک
+                handleCloseModal();
+              }}
               className="bg-brown-700 flex hover:bg-brown-800 text-white font-medium py-3 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-               بفرمایید<FaHeart className="heart-pulse text-red-600 text-xl mr-2" />
+              بفرمایید<FaHeart className="heart-pulse text-red-600 text-xl mr-2" />
             </Button>
           </div>
         </Modal.Body>
       </Modal>
     </div>
   );
-}
+};
 
 export default WelcomeModal;
