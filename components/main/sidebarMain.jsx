@@ -7,10 +7,10 @@ const SidebarMain = ({ isMobile, isOpen, setIsSidebarOpen, isSidebarOpen }) => {
       <div
         className={`bg-black/70 shadow-slate-100 backdrop-blur-lg transition-all duration-300 ${
           isMobile
-            ? `fixed top-0 left-0 h-full w-full z-50 ${ // برای موبایل
+            ? `fixed top-0 left-0 h-full w-full z-40 ${ // برای موبایل
                 isSidebarOpen ? "translate-x-0" : "-translate-x-full"
               }`
-            : "fixed top-0 right-0 h-full w-64 z-50" // برای دسکتاپ، سایدبار در سمت راست
+            : "fixed top-0 right-0 h-full w-64 md:w-56 lg:64 z-40" // برای دسکتاپ، سایدبار در سمت راست
         }`}
       >
         <SidebarText

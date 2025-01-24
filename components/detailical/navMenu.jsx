@@ -24,7 +24,7 @@ const NavMenu = () => {
         </li>
         <li className="flex items-center space-x-2 w-full">
           <Link
-            href="#about"
+            href="/behappy"
             className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full ${isDarkMode ? "text-white" : "text-black"} ${isActive('#about') ? 'bg-[#4343ff] text-white' : ''}`}
           >
             <FaUser size={20} className={`transition-colors duration-300 me-1 ${isActive('#about') ? 'text-[#2c3e50]' : 'text-[#4343ff]'}`} />
@@ -48,6 +48,7 @@ const NavMenu = () => {
             <FaPhoneAlt size={20} className={`transition-colors duration-300 me-1 ${isActive('#contact') ? 'text-[#2c3e50]' : 'text-[#388E3C]'}`} />
             <span className={`font-bold text-sm sm:text-base md:text-lg ${isActive('#contact') ? 'text-[#2c3e50]' : ''}`}>تماس</span>
           </Link>
+          
         </li>
       </ul>
     </nav>

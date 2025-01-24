@@ -1,22 +1,18 @@
 import React, { useState, useRef, useEffect } from "react"; 
-import { FaPhoneAlt, FaWhatsapp, FaTelegramPlane } from "react-icons/fa"; // آیکون‌های فونت آوسوم
-import { Button } from "react-bootstrap"; // استفاده از دکمه‌های React-Bootstrap
+import { FaPhoneAlt, FaWhatsapp, FaTelegramPlane } from "react-icons/fa"; 
+import { Button } from "react-bootstrap"; 
 
 const CallToHelper = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  // برای ذخیره کردن رفرنس‌های دکمه و منو
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
-  // تابع برای تغییر وضعیت باز/بسته بودن منو
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // بررسی اینکه آیا کلیک خارج از دکمه و منو بوده است
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target) && !buttonRef.current.contains(event.target)) {
-        setIsOpen(false); // بسته شدن منو
+        setIsOpen(false); 
       }
     };
 
@@ -31,8 +27,8 @@ const CallToHelper = () => {
     <div className="fixed bottom-5 left-5 z-50">
       {/* دکمه اصلی تماس */}
       <Button
-        ref={buttonRef} // ارجاع به دکمه
-        className="bg-green-600 text-white rounded-full p-3 shadow-xl hover:scale-110 transform transition-all"
+        ref={buttonRef} 
+        className="bg-green-600 text-white rounded-full p-3 shadow-xl hover:scale-110 transform transition-all wave-effect" // اضافه کردن کلاس wave-effect
         onClick={toggleMenu}
       >
         <span className="text-2xl">☕</span> {/* آیکون قهوه */}
@@ -41,12 +37,12 @@ const CallToHelper = () => {
       {/* منوی باز شده */}
       {isOpen && (
         <div
-          ref={menuRef} // ارجاع به منو
+          ref={menuRef}
           className="flex flex-col items-start bg-cover bg-center bg-black/80 rounded-lg mt-3 p-3 w-48 space-y-3"
           style={{
-            backgroundImage: "url('https://via.placeholder.com/200x200.png?text=Coffee+Beans')", // تصویر پس‌زمینه دانه قهوه
-            backgroundSize: "cover", // اندازه تصویر به‌طوری که کل منو را پوشش دهد
-            backgroundPosition: "center", // موقعیت‌دهی به مرکز تصویر
+            backgroundImage: "url('https://via.placeholder.com/200x200.png?text=Coffee+Beans')",
+            backgroundSize: "cover", 
+            backgroundPosition: "center",
           }}
         >
           <a

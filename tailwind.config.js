@@ -24,6 +24,7 @@ module.exports = {
         'custom-image-main': "url('/image/mainPage.webp')",
         'custom-image-myUser': "url('/image/userMy.webp')",
         'custom-header-img': "url('/image/headerBg.webp')",
+        'custom-coffeeShop-img': "url('/image/coffeeShop.webp')",
       },
       fontFamily: {
         vazir: ['Vazir', 'sans-serif'], // فونت سفارشی
