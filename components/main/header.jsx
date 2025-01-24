@@ -10,7 +10,7 @@ const Header = () => {
     <header className={`w-full shadow-lg ${isDarkMode ? " bg-custom-coffeeShop-img" : "bg-custom-header-img"} bg-cover bg-center fixed top-0 left-0 right-0 z-30`}>
       {/* بخش خوشامدگویی */}
       <div className={`relative ${isDarkMode ? "bg-black" : "bg-orange-600"} text-white text-center py-1 px-2 font-semibold text-xs sm:text-xs shadow-md z-10 max-w-screen-lg mx-auto rounded-xl overflow-hidden`}>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-transparent via-white animate-lightning z-20"></div>
+        <div className="absolute top-0 left-0 w-full h-full  animate-lightning z-20"></div>
         <svg 
           className="absolute top-0 left-0 w-full h-full transform rotate-180"
           xmlns="http://www.w3.org/2000/svg"

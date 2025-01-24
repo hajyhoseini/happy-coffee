@@ -3,16 +3,90 @@
 @tailwind utilities;
 
 
+/* فایل styles.css */
+
+.text-center-padding {
+  @apply text-center p-8 rounded-lg shadow-lg transition-all duration-500;
+}
+
+.theme-header {
+  @apply text-2xl md:text-3xl rounded-lg p-2 mt-4 font-extrabold;
+}
+
+.theme-text {
+  @apply mb-8 rounded-md p-3 inline-block;
+}
+
+.flavor-title {
+  @apply mb-5  text-3xl inline-block rounded-lg p-3;
+}
+
+.icon-container {
+  @apply text-6xl mb-4 transition-transform transform hover:scale-110;
+}
+
+.flavor-name {
+  @apply font-semibold text-xl;
+}
+
+.contact-btn {
+  @apply text-3xl hover:transition-all duration-300;
+}
+
+.contact-icon {
+  @apply text-3xl hover:transition-all duration-300;
+}
 
 
 :root {
   --primary-gradient: linear-gradient(to right, rgba(42, 163, 153, 1), rgba(51, 184, 134, 1), rgba(37, 99, 235, 1));
   --hover-color: rgba(255, 255, 255, 0.7);
 }
+@keyframes spinMove {
+  0% {
+    transform: rotate(0deg); /* شروع از 0 درجه */
+  }
+  25% {
+    transform: rotate(90deg); /* حرکت به راست و چرخش 90 درجه */
+  }
+  50% {
+    transform: rotate(180deg); /* برگشت به مرکز و چرخش 180 درجه */
+  }
+  75% {
+    transform: rotate(270deg); /* حرکت به چپ و چرخش 270 درجه */
+  }
+  100% {
+    transform: rotate(360deg); /* برگشت به مرکز و چرخش 360 درجه */
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(0) rotate(0deg); /* شروع از وسط با چرخش 0 درجه */
+  }
+  25% {
+    transform: translateX(33.33%) rotate(0deg); /* حرکت به راست به اندازه یک سوم عرض */
+  }
+  50% {
+    transform: translateX(0) rotate(-90deg); /* برگشت به مرکز با چرخش معکوس */
+  }
+  75% {
+    transform: translateX(-33.33%) rotate(-180deg); /* حرکت به چپ به اندازه یک سوم عرض با چرخش معکوس */
+  }
+  100% {
+    transform: translateX(0) rotate(-360deg); /* برگشت به مرکز با چرخش معکوس */
+  }
+}
+
+.animate-spinMove {
+  animation: spinMove 6s infinite ease-in-out, moveHorizontal 6s infinite ease-in-out;
+  transform-origin: center; /* چرخش حول محور Z */
+}
 
 h1 {
   font-size: 2.5rem;
 }
+
 
 p {
   font-size: 1.25rem;

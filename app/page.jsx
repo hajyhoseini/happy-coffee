@@ -81,7 +81,7 @@ export default function Home() {
           <Description/>
           <Tastes />
           <DescForSkill />
-          <Projects />
+          
         </div>
       </main>
     </div>

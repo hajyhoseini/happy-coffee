@@ -25,12 +25,13 @@ const NavMenu = () => {
         <li className="flex items-center space-x-2 w-full">
           <Link
             href="/behappy"
-            className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full ${isDarkMode ? "text-white" : "text-black"} ${isActive('#about') ? 'bg-[#4343ff] text-white' : ''}`}
+            className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full {isDarkMode ? "text-white" : "text-black"} ${isActive('/behappy') ? 'bg-[#f4a261] text-black' : ''}`}
           >
-            <FaUser size={20} className={`transition-colors duration-300 me-1 ${isActive('#about') ? 'text-[#2c3e50]' : 'text-[#4343ff]'}`} />
-            <span className={`font-bold sm:text-base md:text-sm ${isActive('#about') ? 'text-[#2c3e50]' : ''}`}>هپی باش</span>
+            <FaHome size={20} className={`transition-colors duration-300 me-1 ${isActive('/behappy') ? 'text-[#2c3e50]' : 'text-[#4343ff]'}`} />
+            <span className={`font-bold sm:text-base md:text-lg ${isActive('/behappy') ? 'text-[#2c3e50]' : ''}`}>هپی باش</span>
           </Link>
         </li>
+        
         <li className="flex hover:bg-[#e8c8a5] items-center space-x-2 w-full">
           <Link
             href="/products"
