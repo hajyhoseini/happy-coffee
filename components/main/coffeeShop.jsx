@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 import React, { useState } from "react";
 import { FaHotjar, FaCoffee, FaMugHot, FaGlassWhiskey, FaLeaf, FaCocktail, FaBeer } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
@@ -58,7 +58,7 @@ const CoffeeShop = () => {
       <Container className="d-flex justify-content-center">
         <Row
           className={`${
-            isDarkMode ? "bg-yellow-800 text-white" : "bg-yellow-700 text-black"
+            isDarkMode ? "bg-yellow-800/95 text-white" : "bg-yellow-700/95 text-black"
           } justify-content-center w-100 rounded-lg shadow-md p-6 transition-all duration-700 ease-in-out hover:scale-105`}
         >
           <Col>
@@ -66,17 +66,18 @@ const CoffeeShop = () => {
               {flavors.map((flavor) => (
                 <div
                   key={flavor.name}
-                  className={`flex flex-col items-center justify-center text-center p-6 ${flavor.bgColor} rounded-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-yellow-500`}
+                  className={`flex flex-col items-center justify-center text-center p-4 ${flavor.bgColor} rounded-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-yellow-500`}
+                  style={{ minHeight: '200px' }} // تغییر اندازه ارتفاع کلی
                 >
                   <div
-                    className={`text-4xl sm:text-5xl md:text-6xl mb-4 transition-transform transform hover:scale-125 hover:rotate-3d ${
+                    className={`text-3xl sm:text-4xl mb-3 transition-transform transform hover:scale-125 hover:rotate-3d ${
                       isDarkMode ? "text-yellow-500" : flavor.icon.props.className
                     } shadow-xl`}
                   >
                     {flavor.icon}
                   </div>
                   <p
-                    className={`font-semibold text-lg sm:text-xl mb-4 ${
+                    className={`font-semibold text-md sm:text-lg mb-3 ${
                       isDarkMode ? "text-white" : "text-black"
                     } shadow-md`}
                   >
@@ -84,7 +85,7 @@ const CoffeeShop = () => {
                   </p>
 
                   <p
-                    className={`text-sm sm:text-lg mb-4 ${
+                    className={`text-sm sm:text-lg mb-3 ${
                       isDarkMode ? "text-white" : "text-gray-700"
                     } shadow-sm`}
                   >
@@ -96,14 +97,14 @@ const CoffeeShop = () => {
                       <div className="flex items-center mb-3">
                         <button
                           onClick={() => handleDecrease(flavor.name)}
-                          className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500 text-white shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-400 transform hover:rotate-3d"
+                          className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500 text-white shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-400 transform hover:rotate-3d"
                         >
                           -
                         </button>
                         <span className="mx-4 text-xl">{quantities[flavor.name]}</span>
                         <button
                           onClick={() => handleIncrease(flavor.name)}
-                          className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500 text-white shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-400 transform hover:rotate-3d"
+                          className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500 text-white shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-400 transform hover:rotate-3d"
                         >
                           +
                         </button>
@@ -124,12 +125,12 @@ const CoffeeShop = () => {
                     </div>
                   ) : (
                     <Button
-                    variant="primary"
-                    onClick={() => handlePurchaseClick(flavor.name)}
-                    className="w-full py-2 px-4 rounded-lg transform hover:scale-110 transition-all duration-300 shadow-md hover:shadow-lg flex justify-center items-center"
-                  >
-                    خرید
-                  </Button>
+                      variant="primary"
+                      onClick={() => handlePurchaseClick(flavor.name)}
+                      className="w-full py-2 px-4 rounded-lg transform hover:scale-110 transition-all duration-300 shadow-md hover:shadow-lg flex justify-center items-center"
+                    >
+                      خرید
+                    </Button>
                   )}
                 </div>
               ))}
