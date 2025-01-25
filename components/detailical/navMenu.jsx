@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHome, FaUser, FaCoffee, FaPhoneAlt } from 'react-icons/fa';
+import { FaHome, FaUser, FaCoffee, FaPhoneAlt, FaShoppingCart } from 'react-icons/fa';
 import { useTheme } from '@/context/ThemeContext';
 import Link from 'next/link'; // وارد کردن Link از next/link
 import { usePathname } from 'next/navigation'; // به جای useRouter از usePathname استفاده کنید
@@ -25,9 +25,9 @@ const NavMenu = () => {
         <li className="flex items-center space-x-2 w-full">
           <Link
             href="/behappy"
-            className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full {isDarkMode ? "text-white" : "text-black"} ${isActive('/behappy') ? 'bg-[#f4a261] text-black' : ''}`}
+            className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full ${isDarkMode ? "text-white" : "text-black"} ${isActive('/behappy') ? 'bg-[#f4a261] text-black' : ''}`}
           >
-            <FaHome size={20} className={`transition-colors duration-300 me-1 ${isActive('/behappy') ? 'text-[#2c3e50]' : 'text-[#4343ff]'}`} />
+            <FaUser size={20} className={`transition-colors duration-300 me-1 ${isActive('/behappy') ? 'text-[#2c3e50]' : 'text-[#4343ff]'}`} />
             <span className={`font-bold sm:text-base md:text-lg ${isActive('/behappy') ? 'text-[#2c3e50]' : ''}`}>هپی باش</span>
           </Link>
         </li>
@@ -37,18 +37,21 @@ const NavMenu = () => {
             href="/products"
             className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full ${isDarkMode ? "text-white" : "text-black"} ${isActive('/products') ? 'bg-[#f4a261] text-black' : ''}`}
           >
-            <FaCoffee size={20} className={`transition-colors duration-300 me-1 ${isActive('/products') ? 'text-[#2c3e50]' : 'text-[#f4a261]'}`} />
+            <FaCoffee size={20} className={`transition-colors duration-300 me-1 ${isActive('/products') ? 'text-[#2c3e50]' : 'text-[#f46161]'}`} />
             <span className={`font-bold text-sm sm:text-base md:text-lg ${isActive('/products') ? 'text-[#2c3e50]' : ''}`}>محصولات</span>
           </Link>
         </li>
-        <li className="flex items-center space-x-2 w-full">
+        <li className="flex hover:bg-[#e8c8a5] items-center space-x-2 w-full">
           <Link
-            href="#contact"
-            className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] hover:bg-[#a35d2e] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full ${isDarkMode ? "text-white" : "text-black"} ${isActive('#contact') ? 'bg-[#a35d2e] text-white' : ''}`}
+            href="/buyBasket"
+            className={`hover:bg-[#e8c8a5] hover:text-white px-4 py-2 bg-[#8e6a4d] rounded-md transition duration-300 transform hover:scale-105 flex items-center justify-center text-sm sm:text-base md:text-lg w-full ${isDarkMode ? "text-white" : "text-black"} ${isActive('/buyBasket') ? 'bg-[#f4a261] text-black' : ''}`}
           >
-            <FaPhoneAlt size={20} className={`transition-colors duration-300 me-1 ${isActive('#contact') ? 'text-[#2c3e50]' : 'text-[#388E3C]'}`} />
-            <span className={`font-bold text-sm sm:text-base md:text-lg ${isActive('#contact') ? 'text-[#2c3e50]' : ''}`}>تماس</span>
+            <FaShoppingCart size={20} className={`transition-colors duration-300 me-1 ${isActive('/buyBasket') ? 'text-[#2c3e50]' : 'text-[#e7dcd9]'}`} />
+            <span className={`font-bold text-sm sm:text-base md:text-lg ${isActive('/buyBasket') ? 'text-[#2c3e50]' : ''}`}>سبدخرید</span>
           </Link>
+        </li>
+        <li className="flex items-center space-x-2 w-full">
+         
           
         </li>
       </ul>
