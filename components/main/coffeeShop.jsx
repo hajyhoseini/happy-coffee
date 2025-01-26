@@ -1,8 +1,9 @@
-"use client"; 
 import React, { useState } from "react";
 import { FaHotjar, FaCoffee, FaMugHot, FaGlassWhiskey, FaLeaf, FaCocktail, FaBeer } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useCart } from "@/context/cartContext";
+import { useRouter } from "next/navigation";
 
 const flavors = [
   { name: "هات", icon: <FaHotjar className="text-yellow-800" />, bgColor: "bg-[#f5e1c7]/60" },
@@ -17,31 +18,60 @@ const flavors = [
 
 const CoffeeShop = () => {
   const { isDarkMode } = useTheme();
-  const [selected, setSelected] = useState(null);
-  const [quantities, setQuantities] = useState({});
+  const { addToCart } = useCart();
+  const [selected, setSelected] = useState({});
+  const [showAlert, setShowAlert] = useState(false);
+  const router = useRouter(); // استفاده از روتر برای هدایت به صفحه سبد خرید
 
-  const handlePurchaseClick = (flavorName) => {
-    setSelected(flavorName);
-    if (!quantities[flavorName]) {
-      setQuantities({ ...quantities, [flavorName]: 1 });
-    }
+  const handleFlavorSelect = (flavorName) => {
+    setSelected((prevSelected) => ({
+      ...prevSelected,
+      [flavorName]: prevSelected[flavorName] ? prevSelected[flavorName] + 1 : 1,
+    }));
   };
 
   const handleIncrease = (flavorName) => {
-    setQuantities({ ...quantities, [flavorName]: quantities[flavorName] + 1 });
+    setSelected((prevSelected) => ({
+      ...prevSelected,
+      [flavorName]: prevSelected[flavorName] + 1,
+    }));
   };
 
   const handleDecrease = (flavorName) => {
-    if (quantities[flavorName] > 1) {
-      setQuantities({ ...quantities, [flavorName]: quantities[flavorName] - 1 });
+    if (selected[flavorName] > 1) {
+      setSelected((prevSelected) => ({
+        ...prevSelected,
+        [flavorName]: prevSelected[flavorName] - 1,
+      }));
     }
+  };
+
+  const handleCompleteOrder = () => {
+    Object.keys(selected).forEach((flavorName) => {
+      const quantity = selected[flavorName];
+      const flavor = flavors.find((f) => f.name === flavorName);
+      if (flavor) {
+        addToCart(flavor.name, 400000, quantity);
+      }
+    });
+
+    setShowAlert(true);
+
+    // اسکرول صفحه به بالا
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // آلارم را به مدت ۵ ثانیه نمایش می‌دهیم
+    setTimeout(() => setShowAlert(false), 5000);
+  };
+
+  const handleGoToCart = () => {
+    // هدایت به صفحه سبد خرید
+    router.push("/buyBasket");
   };
 
   return (
     <section
-      className={`relative max-w-4xl mx-auto p-8 w-full py-16 px-12 ${
-        isDarkMode ? "text-white shadow-xl" : "text-black shadow-xl"
-      }`}
+      className={`relative max-w-4xl mx-auto p-8 w-full py-16 px-12 ${isDarkMode ? "text-white shadow-xl" : "text-black shadow-xl"}`}
     >
       <h3
         style={{ textShadow: "2px 2px 5px rgba(255, 223, 0, 0.7)" }}
@@ -55,6 +85,24 @@ const CoffeeShop = () => {
         </div>
       </h3>
 
+      {/* Alert برای اطلاع دادن به کاربر */}
+      {showAlert && (
+        <div
+          className="flex justify-center items-center p-6 mb-4 bg-white text-[#6A4E23] rounded-xl border-4 border-[#6A4E23] shadow-lg shadow-[#6A4E23]/40 transition-all transform hover:scale-105 hover:shadow-[#6A4E23]/50"
+          role="alert"
+        >
+          <span className="mr-2 text-lg">☕</span>
+          سفارش شما به سبد خرید منتقل شد!
+          <Button
+            variant="outline-dark"
+            className="ml-4 py-2 px-4 rounded-lg bg-[#6A4E23] text-white hover:bg-[#4b3e2f] transition-all"
+            onClick={handleGoToCart}
+          >
+            مشاهده سبد خرید
+          </Button>
+        </div>
+      )}
+
       <Container className="d-flex justify-content-center">
         <Row
           className={`${
@@ -67,7 +115,7 @@ const CoffeeShop = () => {
                 <div
                   key={flavor.name}
                   className={`flex flex-col items-center justify-center text-center p-4 ${flavor.bgColor} rounded-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-yellow-500`}
-                  style={{ minHeight: '200px' }} // تغییر اندازه ارتفاع کلی
+                  style={{ minHeight: "200px" }}
                 >
                   <div
                     className={`text-3xl sm:text-4xl mb-3 transition-transform transform hover:scale-125 hover:rotate-3d ${
@@ -77,22 +125,18 @@ const CoffeeShop = () => {
                     {flavor.icon}
                   </div>
                   <p
-                    className={`font-semibold text-md sm:text-lg mb-3 ${
-                      isDarkMode ? "text-white" : "text-black"
-                    } shadow-md`}
+                    className={`font-semibold text-md sm:text-lg mb-3 ${isDarkMode ? "text-white" : "text-black"} shadow-md`}
                   >
                     {flavor.name}
                   </p>
 
                   <p
-                    className={`text-sm sm:text-lg mb-3 ${
-                      isDarkMode ? "text-white" : "text-gray-700"
-                    } shadow-sm`}
+                    className={`text-sm sm:text-lg mb-3 ${isDarkMode ? "text-white" : "text-gray-700"} shadow-sm`}
                   >
-                    ۲۰,۰۰۰ تومان
+                    400,000 تومان
                   </p>
 
-                  {selected === flavor.name ? (
+                  {selected[flavor.name] ? (
                     <div className="flex flex-col items-center">
                       <div className="flex items-center mb-3">
                         <button
@@ -101,7 +145,7 @@ const CoffeeShop = () => {
                         >
                           -
                         </button>
-                        <span className="mx-4 text-xl">{quantities[flavor.name]}</span>
+                        <span className="mx-4 text-xl">{selected[flavor.name]}</span>
                         <button
                           onClick={() => handleIncrease(flavor.name)}
                           className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-yellow-500 bg-yellow-500 text-white shadow-md transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-400 transform hover:rotate-3d"
@@ -109,27 +153,14 @@ const CoffeeShop = () => {
                           +
                         </button>
                       </div>
-
-                      <Button
-                        variant="success"
-                        className="w-full py-2 px-4 rounded-lg mt-2 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                      >
-                        پک 20 تایی
-                      </Button>
-                      <Button
-                        variant="warning"
-                        className="w-full py-2 px-4 rounded-lg mt-2 transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
-                      >
-                        لیوانی
-                      </Button>
                     </div>
                   ) : (
                     <Button
                       variant="primary"
-                      onClick={() => handlePurchaseClick(flavor.name)}
+                      onClick={() => handleFlavorSelect(flavor.name)}
                       className="w-full py-2 px-4 rounded-lg transform hover:scale-110 transition-all duration-300 shadow-md hover:shadow-lg flex justify-center items-center"
                     >
-                      خرید
+                      انتخاب
                     </Button>
                   )}
                 </div>
@@ -138,6 +169,14 @@ const CoffeeShop = () => {
           </Col>
         </Row>
       </Container>
+
+      <Button
+        variant="success"
+        onClick={handleCompleteOrder}
+        className="mt-8 w-full py-2 px-4 rounded-lg shadow-lg transition-all transform hover:scale-110"
+      >
+        تکمیل سفارش
+      </Button>
     </section>
   );
 };

@@ -3,7 +3,7 @@ import React from 'react';
 
 const Page = () => {
     return (
-        <div>
+        <div className='bg-custom-image-main bg-cover'>
             <BuyBasket/>
         </div>
     );

@@ -10,6 +10,7 @@ import Contact from '@/components/main/Contact';
 import Header from '@/components/main/header';
 import HeaderAuth from '@/components/detailical/headerAuth';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { CartProvider } from '@/context/cartContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,7 +81,7 @@ export default function Layout({ children }) {
 
 
 </Head>
-
+<CartProvider>
 <ThemeProvider>
 
       <html lang="en" dir="rtl">
@@ -108,6 +109,7 @@ export default function Layout({ children }) {
         </body>
       </html>
       </ThemeProvider>
+      </CartProvider>
     </>
   );
 }
