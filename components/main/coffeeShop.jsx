@@ -69,6 +69,14 @@ const CoffeeShop = () => {
     router.push("/buyBasket");
   };
 
+  const handleCancelOrder = (flavorName) => {
+    setSelected((prevSelected) => {
+      const updatedSelected = { ...prevSelected };
+      delete updatedSelected[flavorName]; // حذف نوشیدنی انتخاب شده
+      return updatedSelected;
+    });
+  };
+
   return (
     <section
       className={`relative max-w-4xl mx-auto p-8 w-full py-16 px-12 ${isDarkMode ? "text-white shadow-xl" : "text-black shadow-xl"}`}
@@ -153,6 +161,13 @@ const CoffeeShop = () => {
                           +
                         </button>
                       </div>
+                      <Button
+                        variant="outline-danger"
+                        onClick={() => handleCancelOrder(flavor.name)}
+                        className="mt-4 w-full py-2 px-4 rounded-lg shadow-lg transition-all transform hover:scale-110 bg-red-500 text-white"
+                      >
+                        انصراف
+                      </Button>
                     </div>
                   ) : (
                     <Button
@@ -171,12 +186,13 @@ const CoffeeShop = () => {
       </Container>
 
       <Button
-        variant="success"
-        onClick={handleCompleteOrder}
-        className="mt-8 w-full py-2 px-4 rounded-lg shadow-lg transition-all transform hover:scale-110"
-      >
-        تکمیل سفارش
-      </Button>
+  variant="success"
+  onClick={handleCompleteOrder}
+  className="mt-8 w-full py-3 px-6 rounded-xl shadow-2xl transition-all transform hover:scale-105 hover:shadow-xl hover:bg-green-600 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50 text-xl font-semibold flex justify-center items-center"
+>
+  <span className="mr-2">✔️</span>
+  تکمیل سفارش
+</Button>
     </section>
   );
 };
