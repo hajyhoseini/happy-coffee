@@ -46,21 +46,21 @@ const CallToHelper = () => {
           }}
         >
           <a
-            href="tel:+1234567890"
+            href="tel:09388780198"
             className="flex items-center p-3 text-white hover:bg-green-800 rounded-lg transition-all transform hover:scale-105"
           >
             <FaPhoneAlt className="ml-3 text-green-600" size={24} />
             تماس تلفنی
           </a>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/989388780198"
             className="flex items-center p-3 text-white hover:bg-green-800 rounded-lg transition-all transform hover:scale-105"
           >
             <FaWhatsapp className="ml-3 text-green-500" size={24} />
             واتس‌اپ
           </a>
           <a
-            href="https://t.me/yourtelegramusername"
+            href="https://t.me/hajy81"
             className="flex items-center p-3 text-white hover:bg-green-800 rounded-lg transition-all transform hover:scale-105"
           >
             <FaTelegramPlane className="ml-3 text-blue-500" size={24} />
