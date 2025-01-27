@@ -44,12 +44,12 @@ const BuyBasket = () => {
   className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl w-full text-center py-4 sm:py-3 md:py-4 px-6 sm:px-8 rounded-lg mb-4 sm:mb-6 shadow-xl transition-all ${
     isDarkMode
       ? "text-white bg-black/70 backdrop-blur-md"
-      : "text-black font-bold bg-white/70"
+      : "text-black font-bold bg-white/90"
   }`}
   style={{
     textShadow: isDarkMode
-      ? "2px 2px 8px rgba(255, 223, 0, 0.6), 0px 0px 25px rgba(255, 223, 0, 0.5)"
-      : "2px 2px 6px rgba(0, 0, 0, 0.6), 0px 0px 20px rgba(0, 0, 0, 0.4)",
+      ? "2px 2px 15px rgba(255, 223, 0, 0.6), 0px 0px 25px rgba(255, 223, 0, 0.5)"
+      : "2px 2px 15px rgba(0, 0, 0, 0.6), 0px 0px 20px rgba(0, 0, 0, 0.4)",
     transform: "rotate(-1deg) skew(-1deg)",
     letterSpacing: "1px",
     animation: "glow 1.5s ease-in-out infinite alternate", // افکت برق زدن طلایی
@@ -168,11 +168,11 @@ const BuyBasket = () => {
           }}
         >
           <Card.Body>
-            <h3 className="mb-4 sm:mb-5 flex justify-center items-center text-xl sm:text-2xl md:text-3xl">
-              <FaCoffee size={30} className="mr-2 text-brown-600" />
+            <h3 className={` rounded-md mb-4 sm:mb-5 flex justify-center items-center text-xl sm:text-2xl md:text-3xl ${ isDarkMode ? " bg-black text-white" : "bg-white text-black"}`}>
+              <FaCoffee size={30} className="mr-2 text-yellow-400" />
               چرا منتظرید؟ شروع به خرید کنید!
             </h3>
-            <p className="mb-4 md:text-base leading-relaxed">
+            <p className=" mb-4 md:text-base leading-relaxed">
               همین حالا قهوه مورد علاقه‌تان را انتخاب کرده و از طعم بی‌نظیر آن لذت ببرید.
             </p>
             <Button
