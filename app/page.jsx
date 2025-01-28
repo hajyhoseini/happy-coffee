@@ -57,7 +57,6 @@ export default function Home() {
         setIsSidebarOpen={setIsSidebarOpen} 
         isSidebarOpen={isSidebarOpen} 
       />
-<CallToHelper />
       {/* محتوای اصلی */}
       <main
         className={`transition-all duration-300 p-4 relative ${

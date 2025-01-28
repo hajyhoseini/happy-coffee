@@ -11,6 +11,7 @@ import Header from '@/components/main/header';
 import HeaderAuth from '@/components/detailical/headerAuth';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { CartProvider } from '@/context/cartContext';
+import CallToHelper from '@/components/detailical/callToHelper';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -96,6 +97,7 @@ export default function Layout({ children }) {
               <Header />
             </header>
           )}
+          <CallToHelper />
           
           {/* محتوای اصلی صفحه */}
           {children}
@@ -103,6 +105,8 @@ export default function Layout({ children }) {
           {/* نمایش فوتر فقط در صورتی که صفحه لاگین یا ثبت‌نام نباشد */}
           {!isAuthPage && (
             <footer>
+              
+
               <Contact />
             </footer>
           )}

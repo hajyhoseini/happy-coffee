@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 const flavors = [
   { name: "هات", icon: <FaHotjar className="text-yellow-800" />, bgColor: "bg-[#f5e1c7]/60" },
-  { name: "نسکافه", icon: <FaCoffee className="text-yellow-600" />, bgColor: "bg-[#e6c39e]/60" },
+  { name: "نسکافه", icon: <FaCoffee className="text-yellow-400" />, bgColor: "bg-[#e6c39e]/60" },
   { name: "کاپوچینو", icon: <FaMugHot className="text-red-500" />, bgColor: "bg-[#f3e3c3]/60" },
   { name: "لاته", icon: <FaGlassWhiskey className="text-white" />, bgColor: "bg-[#d8c79d]/60" },
   { name: "ماسالا", icon: <FaLeaf className="text-orange-500" />, bgColor: "bg-[#f5e1c7]/60" },

@@ -1,11 +1,33 @@
-import React from 'react';  
+import React, { useEffect, useState } from 'react';  
 import NavMenu from '../detailical/navMenu';
 import DarkModeToggle from '../detailical/DarkModeToggle';
 import { useTheme } from '@/context/ThemeContext'; // استفاده از context برای مدیریت حالت شب و روز
+import MobileButton from '../detailical/MobileButton';
+import SidebarMain from './sidebarMain';
 
 const Header = () => {
   const { isDarkMode } = useTheme(); // دریافت وضعیت حالت شب و روز از context
+  const [isMobile, setIsMobile] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      const isNowMobile = window.innerWidth <= 768;
+      setIsMobile(isNowMobile);
 
+      // در حالت دسکتاپ، سایدبار همیشه باز باشد
+      if (!isNowMobile) {
+        setIsSidebarOpen(true);
+      } else {
+        setIsSidebarOpen(false); // در حالت موبایل پیش‌فرض بسته باشد
+      }
+    };
+
+    handleResize(); // برای بار اول هم بررسی می‌کنیم
+    window.addEventListener("resize", handleResize);
+
+    // پاک کردن event listener هنگام unmount شدن کامپوننت
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <header className={`w-full shadow-lg ${isDarkMode ? " bg-custom-coffeeShop-img" : "bg-custom-header-img"} bg-cover bg-center fixed top-0 left-0 right-0 z-30`}>
       {/* بخش خوشامدگویی */}
@@ -29,7 +51,15 @@ const Header = () => {
 
       {/* دکمه تغییر حالت شب و روز */}
       <DarkModeToggle />
-
+      {isMobile && !isSidebarOpen && (
+          <MobileButton setIsSidebarOpen={setIsSidebarOpen} />
+        )}
+           <SidebarMain 
+        isMobile={isMobile} 
+        isOpen={isSidebarOpen} 
+        setIsSidebarOpen={setIsSidebarOpen} 
+        isSidebarOpen={isSidebarOpen} 
+      />
       {/* محتوای مرکزی */}
       <div className="container mx-auto flex justify-center items-center px-3 sm:px-4">
         <div className="flex items-end text-center lg:text-left">

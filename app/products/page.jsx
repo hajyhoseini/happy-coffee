@@ -7,6 +7,7 @@ import React from 'react';
 const Page = () => {
     return (
         <div className=' bg-custom-coffeeShop-img bg-cover'>
+            
             <CoffeeShop/>
             <CallToHelper/>
        
