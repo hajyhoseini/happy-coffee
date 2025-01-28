@@ -41,10 +41,10 @@ const SidebarText = ({ isOpen, setIsSidebarOpen }) => {
           <Nav.Item className="flex-1 sm:w-1/2 md:w-full text-center my-3">
             <Nav.Link
               href="/products"
-              className={`d-flex align-items-center justify-content-center text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-700/80 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
+              className={`rounded-2xl d-flex align-items-center justify-content-center text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-600/70 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
             >
               <FaCoffee className="text-red-600 bg-black text-2xl" />
-              <span className="ps-3 bg-red-600 rounded-lg px-6 py-3 font-medium ms-2">
+              <span className="ps-3 bg-yellow-700 rounded-lg px-6 py-3 font-medium ms-2">
                 طعم‌ها
               </span>
             </Nav.Link>
@@ -53,10 +53,10 @@ const SidebarText = ({ isOpen, setIsSidebarOpen }) => {
           <Nav.Item className="flex-1 sm:w-1/2 md:w-full text-center my-3">
             <Nav.Link
               href="/buyBasket"
-              className={`d-flex align-items-center justify-content-center text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-700/80 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
+              className={`rounded-2xl d-flex align-items-center justify-content-center text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-600/70 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
             >
               <FaClipboardList className="text-yellow-400 bg-black text-2xl" />
-              <span className="ps-3 bg-yellow-500 rounded-lg px-6 py-3 font-medium ms-2">
+              <span className="ps-3 bg-yellow-700 rounded-lg px-6 py-3 font-medium ms-2">
                 سفارشات
               </span>
             </Nav.Link>
@@ -65,22 +65,22 @@ const SidebarText = ({ isOpen, setIsSidebarOpen }) => {
           <Nav.Item className="flex-1 sm:w-1/2 md:w-full text-center my-3">
             <Nav.Link
               href="/login"
-              className={`d-flex align-items-center justify-content-center text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-700/80 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
+              className={`rounded-2xl d-flex align-items-center justify-content-center text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-600/70 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
             >
               <FaSignInAlt className="bg-black text-blue-500  text-2xl" />
-              <span className="ps-3 bg-blue-600 rounded-lg px-6 py-3 font-medium ms-2">
+              <span className="ps-3 bg-yellow-700 rounded-lg px-6 py-3 font-medium ms-2">
                 ورود
               </span>
             </Nav.Link>
           </Nav.Item>
 
-          <Nav.Item className="flex-1 sm:w-1/2 md:w-full text-center my-3">
+          <Nav.Item className="flex-1 sm:w-1/2 md:w-full text-center  my-3">
             <Nav.Link
               href="/register"
-              className={`d-flex align-items-center justify-content-center text-lg transform transition-all  border-black duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-700/80 hover:bg-yellow-600 border-black'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
+              className={` rounded-2xl d-flex align-items-center justify-content-center text-lg transform transition-all  border-black duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-600/70 hover:bg-yellow-600 border-black'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
             >
               <FaUserPlus className="bg-black text-green-600  text-2xl" />
-              <span className="ps-3 bg-green-700 rounded-lg px-6 py-3 font-medium ms-2">
+              <span className="ps-3 bg-yellow-700 rounded-lg px-6 py-3 font-medium ms-2">
                 ثبت‌نام
               </span>
             </Nav.Link>
@@ -90,10 +90,10 @@ const SidebarText = ({ isOpen, setIsSidebarOpen }) => {
           <Nav.Item className="w-full sm:w-full md:w-full text-center my-3">
             <Nav.Link
               href="/behappy"
-              className={`d-flex align-items-center justify-content-center  text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-700/80 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
+              className={`rounded-2xl d-flex align-items-center justify-content-center  text-lg transform transition-all duration-200 hover:scale-105 ${isDarkMode ? 'text-white hover:bg-brown-700 bg-brown-800/80 backdrop-blur-sm' : 'text-black bg-yellow-600/70 hover:bg-yellow-600'} border-4 border-black shadow-lg hover:shadow-2xl hover:scale-105 transition-shadow duration-300`}
             >
-              <FaEnvelopeOpenText className="text-green-500 bg-black text-2xl" />
-              <span className="ps-3   bg-green-500 rounded-lg px-6 py-3 font-medium ms-2">
+              <FaEnvelopeOpenText className="text-green-300 bg-black text-2xl" />
+              <span className="ps-3   bg-yellow-700 rounded-lg px-6 py-3 font-medium ms-2">
                 به ما بپیوند
               </span>
             </Nav.Link>

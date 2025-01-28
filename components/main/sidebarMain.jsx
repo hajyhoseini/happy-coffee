@@ -12,7 +12,7 @@ const SidebarMain = ({ isMobile, isOpen, setIsSidebarOpen, isSidebarOpen }) => {
       <div
         className={`  ${
           isDarkMode ? '' : 'bg-white'
-        } bg-custom-image shadow-lg rounded-lg transition-all duration-500 ease-in-out transform ${
+        } bg-custom-coffeeShop-img bg-cover shadow-lg rounded-lg transition-all duration-500 ease-in-out transform ${
           isMobile
             ? `fixed top-0 left-0 h-full w-full z-40 ${
                 isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
