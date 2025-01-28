@@ -21,12 +21,14 @@ const CustomModal = ({ show, onClose, onConfirm }) => {
       <Modal.Footer className="w-full flex justify-center gap-4">
       <Button
   variant="outline-info"
-  onClick={onClose}
+  href="/getInformation"
   className="mx-2 bg-brown-700 hover:bg-brown-800 text-white font-medium py-3 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
+  aria-label="تکمیل مشخصات"
 >
-  <FaClipboardList className="text-xl text-white" /> {/* آیکون وسط چین شده */}
-  <span className="text-sm font-semibold">ادامه خرید</span>
+  <FaClipboardList className="text-xl text-white" />
+  <span className="text-sm font-semibold">تکمیل مشخصات</span>
 </Button>
+
 
         <Button
           variant="success"

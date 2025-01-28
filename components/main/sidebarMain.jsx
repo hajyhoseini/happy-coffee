@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext'; // استفاده از context برای مدیریت حالت شب و روز
 import SidebarText from '../detailical/SidebarText';
+import { FaTimes } from 'react-icons/fa'; // اضافه کردن آیکون بستن
 
 const SidebarMain = ({ isMobile, isOpen, setIsSidebarOpen, isSidebarOpen }) => {
   const { isDarkMode } = useTheme(); // استفاده از context برای وضعیت شب و روز
@@ -9,18 +10,18 @@ const SidebarMain = ({ isMobile, isOpen, setIsSidebarOpen, isSidebarOpen }) => {
   return (
     <div>
       <div
-        className={`${
-          isDarkMode ? 'bg-gray-900' : 'bg-white'
-        } shadow-slate-100 backdrop-blur-lg transition-all duration-300 ${
+        className={`  ${
+          isDarkMode ? '' : 'bg-white'
+        } bg-custom-image shadow-lg rounded-lg transition-all duration-500 ease-in-out transform ${
           isMobile
             ? `fixed top-0 left-0 h-full w-full z-40 ${
                 isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
               }`
             : 'fixed top-0 right-0 h-full w-64 md:w-56 lg:w-64 z-40'
-        } ${isDarkMode ? 'backdrop-blur-md' : 'backdrop-blur-sm'}`} // اضافه کردن backdrop-blur
+        } ${isDarkMode ? '' : 'backdrop-blur-sm'} transform scale-105`}
       >
         <SidebarText
-          className=" "
+          className="text-white"
           isOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
         />
@@ -33,7 +34,7 @@ const SidebarMain = ({ isMobile, isOpen, setIsSidebarOpen, isSidebarOpen }) => {
               isDarkMode ? 'bg-red-500 text-white' : 'bg-red-600 text-white'
             }`}
           >
-            ✕
+            <FaTimes size={20} className="text-white" />
           </button>
         )}
       </div>
